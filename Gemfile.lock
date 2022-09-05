@@ -63,9 +63,15 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
+    bootstrap (4.6.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -82,6 +88,7 @@ GEM
     crass (1.0.6)
     diff-lcs (1.5.0)
     erubi (1.11.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     glob (0.3.0)
     globalid (1.0.0)
@@ -116,6 +123,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    popper_js (1.16.0)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -259,6 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
+  bootstrap (~> 4.6.1)
   capybara (>= 3.26)
   i18n
   i18n-js
