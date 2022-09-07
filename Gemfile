@@ -5,6 +5,7 @@ ruby "2.7.6"
 
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 4.6.1"
+gem "faker"
 gem "i18n"
 gem "i18n-js"
 gem "jbuilder", "~> 2.7"
