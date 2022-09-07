@@ -15,3 +15,5 @@ en:
       forgot_password: "Forgot password ?"
       don't_have_account: "Don't have an account ?"
       register: "Register now !"
+      name_label: Name Account
+      password_label: Password
