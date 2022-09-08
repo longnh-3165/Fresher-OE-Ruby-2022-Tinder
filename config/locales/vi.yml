@@ -1,0 +1,17 @@
+vi:
+  base_title: "Tinder App <3"
+  application:
+    en: "English"
+    vi: "Vietnamese"
+  landing_pages:
+    home:
+      title: "Trang chủ"
+      welcome: "Chào mừng đến với ứng dụng Sun* Tinder"
+      first_intro: "Sun* Tinder là một mạng xã hội cho phép mọi người kết nối với nhau"
+      second_intro: "Hãy phát triển tình yêu từ tình bạn, đừng phát triển tình bạn từ tình yêu"
+      sign_up: "Đăng ký ngay !"
+      login: "Đăng nhập ngay"
+      remember_me: "Ghi nhớ tài khoản"
+      forgot_password: "Quên mật khẩu ?"
+      don't_have_account: "Bạn không có tài khoản ?"
+      register: "Đăng ký ngay !"
