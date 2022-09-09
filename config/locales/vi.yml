@@ -15,5 +15,10 @@ vi:
       forgot_password: "Quên mật khẩu ?"
       don't_have_account: "Bạn không có tài khoản ?"
       register: "Đăng ký ngay !"
-      name_label: Tên tài khoản
-      password_label: Mật khẩu
+      name_label: "Tên tài khoản"
+      password_label: "Mật khẩu"
+  match_pages:
+    create:
+      success_message: "Đã like <3"
+    match:
+      title: "Ghép đôi"

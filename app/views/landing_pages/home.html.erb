@@ -26,22 +26,13 @@
             <div class="we-login-register">
               <div class="form-title">
                 <i class="fa fa-key"></i><%= t ".login" %>
-                <span><i class="fa fa-exclamation-circle" ></i> </span>
+                <span></span>
               </div>
               <%= form_for :session,html: {class: "we-form"}, url: login_path do |f| %>
                 <%= f.label :name, t(".name_label") %>
                 <%= f.text_field :name, class: "form-control" %>
-                <span class="text-black-50">
-                  <i class="fa fa-exclamation-circle"></i><i></i>
-                </span>
                 <%= f.label :password, t(".password_label") %>
                 <%= f.password_field :password, class: "form-control" %>
-                <span class="text-black-50">
-                  <i class="fa fa-exclamation-circle"></i><i></i>
-                </span><br>
-                <p class="text-black-50">
-                  <i class="fa fa-exclamation-circle"></i><i></i>
-                </p>
                 <%= f.label :remember_me, class: "check_box" do %>
                   <%= f.check_box :remember_me %>
                   <span><%= t(".remember_me") %></span>
@@ -49,7 +40,6 @@
                 <%= f.submit t(".login") %>
               <% end %>
               <a class="forgot underline"><%= t ".forgot_password" %></a>
-              <i class="fa fa-2x fa-facebook-square mr-1"></i>
               <span><%= t ".don't_have_account" %><a class="we-account underline" title=""><%= t ".register" %></a></span>
             </div>
           </div>
