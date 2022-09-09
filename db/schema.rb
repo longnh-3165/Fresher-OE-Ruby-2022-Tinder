@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_07_071158) do
+ActiveRecord::Schema.define(version: 2022_09_08_080610) do
 
   create_table "countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -64,13 +64,14 @@ ActiveRecord::Schema.define(version: 2022_09_07_071158) do
     t.string "facebook"
     t.string "phone"
     t.text "description"
-    t.string "password"
+    t.string "password_digest"
     t.boolean "actived"
     t.boolean "admin"
     t.integer "type_of"
     t.bigint "countries_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
     t.index ["countries_id"], name: "index_users_on_countries_id"
   end
 

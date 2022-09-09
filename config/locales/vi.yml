@@ -15,3 +15,5 @@ vi:
       forgot_password: "Quên mật khẩu ?"
       don't_have_account: "Bạn không có tài khoản ?"
       register: "Đăng ký ngay !"
+      name_label: Tên tài khoản
+      password_label: Mật khẩu

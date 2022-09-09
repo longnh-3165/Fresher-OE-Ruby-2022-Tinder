@@ -1,4 +1,4 @@
-User.create!(name: "hoang long",
+User.create!(name: "hoanglong",
   date_of_birth: "1998-20-01",
   gender: 0,
   email: "hoanglong@gmail.com",
@@ -26,10 +26,3 @@ User.create!(name: name,
   actived: true,
   type_of: 0)
 end
-
-users = User.all
-user = users.first
-following = users[2..20]
-followers = users[3..15]
-following.each{|followed| user.like(followed)}
-followers.each{|follower| follower.like(user)}
