@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :logged_in_user
-
   def show
     @user = User.find_by id: params[:id]
 
@@ -8,5 +7,9 @@ class UsersController < ApplicationController
 
     flash[:danger] = t ".not_found"
     redirect_to root_path
+  end
+
+  def index
+    @users = User.all
   end
 end

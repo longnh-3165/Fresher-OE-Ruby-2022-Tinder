@@ -17,3 +17,6 @@ en:
       register: "Register now !"
       name_label: Name Account
       password_label: Password
+  match_pages:
+    match:
+      title: "Matching"
