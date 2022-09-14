@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+
   before_action :set_locale
 
   private
@@ -15,6 +16,18 @@ class ApplicationController < ActionController::Base
     return if logged_in?
 
     flash[:danger] = t ".not_logged"
-    redirect_to login_url
+    redirect_to root_path
+  end
+
+  def find_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    user_not_found
+  end
+
+  def user_not_found
+    flash[:danger] = t ".not_found"
+    redirect_to root_url
   end
 end

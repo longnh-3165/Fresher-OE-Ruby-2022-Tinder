@@ -11,12 +11,15 @@ import "jquery/dist/jquery";
 import "hammerjs/hammer";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
+require("jquery")
 
 //= require jquery3
 //= require jquery_ujs
 //= require hammer
 //= require jquery.hammer
 //= require_tree .
+
+window.$ = jQuery;
 
 Rails.start();
 Turbolinks.start();
@@ -142,3 +145,5 @@ $(document).ready(function () {
   nope.addEventListener("click", nopeListener);
   love.addEventListener("click", loveListener);
 });
+
+global.toastr = require("toastr")

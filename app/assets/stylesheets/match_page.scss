@@ -81,11 +81,13 @@ body {
 
 .match--card {
   display: inline-block;
-  width: 90vw;
-  max-width: 400px;
+  width: 70%;
   height: 70vh;
   background: #ffffff;
   padding-bottom: 40px;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
@@ -104,13 +106,22 @@ body {
 }
 
 .match--card img {
-  max-width: 100%;
+  max-width: 70%;
+  height: 50%;
+  float:left;
   pointer-events: none;
 }
 
 .match--card h3 {
   margin-top: 32px;
   font-size: 32px;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.match--card h4 {
+  margin-top: 32px;
+  font-size: 28px;
   padding: 0 16px;
   pointer-events: none;
 }
@@ -125,13 +136,13 @@ body {
 .match--buttons {
   flex: 0 0 100px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .match--buttons button {
-  border-radius: 50%;
-  line-height: 60px;
-  width: 60px;
+  border-radius: 80%;
+  line-height: 100px;
+  width: 100px;
   border: 0;
   background: #ffffff;
   display: inline-block;
@@ -143,7 +154,7 @@ body {
 }
 
 .match--buttons i {
-  font-size: 32px;
+  font-size: 52px;
   vertical-align: middle;
 }
 
