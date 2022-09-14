@@ -20,5 +20,7 @@ en:
   match_pages:
     create:
       success_message: "Liked <3"
+    check_relationship:
+      matched: "Oh! You and other person had matched, click here to know more !"
     match:
       title: "Matching"

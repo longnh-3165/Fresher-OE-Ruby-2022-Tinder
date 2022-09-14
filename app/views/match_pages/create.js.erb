@@ -1,2 +1,6 @@
 $(".match-card-<%= @user.id %>").remove()
+<% if flash[:success].present? and flash[:info].blank? %>
 toastr.success("<%= flash[:success] %>")
+<% else %>
+toastr.info("<%= flash[:info] %>")
+<% end %>
