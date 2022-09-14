@@ -1,8 +1,7 @@
 class MatchPagesController < ApplicationController
   include MatchPagesHelper
 
-  after_action :random_user, only: %i(create)
-  before_action :get_users, :random_user, :logged_in_user
+  before_action :get_users, :logged_in_user
   before_action :find_user, only: %i(create)
 
   def create
@@ -16,10 +15,6 @@ class MatchPagesController < ApplicationController
   private
 
   def get_users
-    @users = User.all
-  end
-
-  def random_user
-    @list_random_users = @users.sample(10)
+    @pagy, @users = pagy(User.all, items: Settings.digits.size_of_page)
   end
 end
