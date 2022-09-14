@@ -31,8 +31,8 @@ class User < ApplicationRecord
     following << other_user
   end
 
-  def like? other_user
-    following.include? other_user.id
+  def like_each_other? other_user
+    following.include? other_user and followers.include? other_user
   end
 
   def remember

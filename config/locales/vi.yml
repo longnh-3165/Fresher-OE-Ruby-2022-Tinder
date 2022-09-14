@@ -20,5 +20,6 @@ vi:
   match_pages:
     create:
       success_message: "Đã like <3"
+      matched: "Oh! Bạn và ai đó đã kết nối với nhau, bấm vào để biết thêm nhé !"
     match:
       title: "Ghép đôi"
