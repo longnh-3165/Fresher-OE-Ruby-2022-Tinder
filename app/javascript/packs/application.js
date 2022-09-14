@@ -30,8 +30,6 @@ $(document).ready(function () {
 
   const matchContainer = document.querySelector(".match");
   const allCards = document.querySelectorAll(".match--card");
-  const nope = document.getElementById("nope");
-  const love = document.getElementById("love");
 
   function initCards(card, index) {
     const newCards = document.querySelectorAll(".match--card:not(.removed)");
@@ -132,12 +130,18 @@ $(document).ready(function () {
         card.style.transform =
           "translate(-" + moveOutWidth + "px, -100px) rotate(30deg)";
       }
-
-      initCards();
-
       event.preventDefault();
     };
   }
+  $('.nope').on('click', function () {
+    createButtonListener(false);
+    initCards();
+  });
+
+  $('.love').on('click', function () {
+    createButtonListener(true);
+    initCards();
+  });
 
   const nopeListener = createButtonListener(false);
   const loveListener = createButtonListener(true);
