@@ -1,4 +1,12 @@
 en:
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%H:%M:%S %Y/%m/%d"
+      short: "%Y/%m/%d %H:%M"
   base_title: "Tinder App <3"
   application:
     en: "English"
@@ -20,9 +28,17 @@ en:
   match_pages:
     create:
       success_message: "Liked <3"
+      matched: "Oh! You and other person had matched, click here to know more !"
     match:
       title: "Matching"
       trigger_btn: "Filters"
+      name: "Name:"
+      date_of_birth: "Date of Birth:"
+      gender: "Gender:"
+      male: "Male"
+      female: "Female"
+      country: "Country:"
+      description: "Description:"
     filter:
       title: "Filters"
       card_1:
@@ -39,3 +55,20 @@ en:
       btn: "Search"
     errors:
       no_user: "There's no users matching the requirements."
+  users:
+    show:
+      about: "About"
+      edit_button: "Edit profile"
+      time_line: "Time line"
+      day_join: "Day join"
+      follow: "Follow"
+      name: "Name"
+      date_of_birth: "Date of Birth"
+      gender: "Gender"
+      male: "Male"
+      female: "Female"
+      email: "Email"
+      facebook: "Facebook"
+      phone: "Phone"
+      country: "Country"
+      description: "Description"

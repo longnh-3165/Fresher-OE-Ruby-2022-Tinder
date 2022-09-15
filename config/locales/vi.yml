@@ -1,4 +1,12 @@
 vi:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d/%m"
+  time:
+    formats:
+      default: "%H:%M:%S %d/%m/%Y"
+      short: "%d/%m/%Y %H:%M"
   base_title: "Tinder App <3"
   application:
     en: "English"
@@ -20,9 +28,17 @@ vi:
   match_pages:
     create:
       success_message: "Đã like <3"
+      matched: "Oh! Bạn và ai đó đã kết nối với nhau, bấm vào để biết thêm nhé !"
     match:
       title: "Ghép đôi"
       trigger_btn: "Bo loc"
+      name: "Tên:"
+      date_of_birth: "Ngày sinh:"
+      gender: "Giới tính:"
+      male: "Nam"
+      female: "Nữ"
+      country: "Quê quán:"
+      description: "Mô tả:"
     filter:
       title: "Bo loc"
       card_1:
@@ -39,3 +55,20 @@ vi:
       btn: "Tim kiem"
     errors:
       no_user: "There's no users matching the requirements."
+  users:
+    show:
+      about: "Bản thân"
+      edit_button: "Sửa thông tin"
+      time_line: "Dòng thời gian"
+      day_join: "Ngày tham gia"
+      follow: "Theo dõi"
+      name: "Tên"
+      date_of_birth: "Ngày sinh"
+      gender: "Giới tính"
+      male: "Nam"
+      female: "Nữ"
+      email: "Email"
+      facebook: "Facebook"
+      phone: "Số Điện Thoại"
+      country: "Quê quán"
+      description: "Mô tả"

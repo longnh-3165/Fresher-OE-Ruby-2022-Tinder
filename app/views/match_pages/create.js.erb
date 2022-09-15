@@ -1,2 +1,5 @@
 $(".match-card-<%= @user.id %>").remove()
-toastr.success("<%= flash[:success] %>")
+toastr.success("<%= @like %>")
+<% if @connected %>
+  toastr.info("<%= @matched %>")
+<% end %>
