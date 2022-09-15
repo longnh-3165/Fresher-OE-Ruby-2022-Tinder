@@ -23,7 +23,6 @@ vi:
       matched: "Oh! Bạn và ai đó đã kết nối với nhau, bấm vào để biết thêm nhé !"
     match:
       title: "Ghép đôi"
-      trigger_btn: "Bo loc"
     filter:
       title: "Bo loc"
       card_1:
@@ -40,3 +39,18 @@ vi:
       btn: "Tim kiem"
     errors:
       no_user: "There's no users matching the requirements."
+  admin_pages:
+    index:
+      name: "Ten"
+      gold: "Tinh trang nang cap"
+      act: "Hanh dong"
+      info: "Thong tin"
+      up: "Nang cap"
+      del: "Xoa"
+  layouts:
+    header:
+      fil_btn: "Bo loc"
+      inf_ref: "Thong tin"
+      ad_ref: "Quan tri"
+      out: "Dang xuat"
+      lang: "Ngon ngu"
