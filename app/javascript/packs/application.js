@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import "jquery/dist/jquery";
 import "hammerjs/hammer";
+import "bootstrap/js/dist";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
 require("jquery")

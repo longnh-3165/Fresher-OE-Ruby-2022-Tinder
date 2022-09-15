@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include MatchPagesHelper
   attr_accessor :remember_token
 
   belongs_to :country, optional: true
@@ -11,6 +12,16 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships
   has_secure_password
+
+  scope :by_gender,
+        ->(gender){where(gender: gender.presence || Settings.gender.range)}
+
+  scope :by_age,
+        ->(max_age,
+           min_age){where(date_of_birth: get_filter_range(min_age, max_age))}
+
+  scope :by_place,
+        ->(place){where(countries_id: place.presence || Settings.place.range)}
 
   class << self
     def digest string

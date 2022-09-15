@@ -14,17 +14,8 @@ body {
   font-family: sans-serif;
 }
 
-.bg--img {
-  background: url("theme-bg.jpg");
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 .match {
+  background: #fd3a73;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -71,23 +62,21 @@ body {
 
 .match--cards {
   flex-grow: 1;
-  padding-top: 40px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   z-index: 1;
+  margin-bottom: 100px;
 }
 
 .match--card {
   display: inline-block;
-  width: 70%;
+  width: 90vw;
+  max-width: 400px;
   height: 70vh;
   background: #ffffff;
   padding-bottom: 40px;
-  text-align: left;
-  padding-left: 20px;
-  padding-top: 20px;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
@@ -106,9 +95,7 @@ body {
 }
 
 .match--card img {
-  max-width: 70%;
-  height: 50%;
-  float:left;
+  max-width: 100%;
   pointer-events: none;
 }
 
@@ -140,9 +127,9 @@ body {
 }
 
 .match--buttons button {
-  border-radius: 80%;
-  line-height: 100px;
-  width: 100px;
+  border-radius: 50%;
+  line-height: 60px;
+  width: 60px;
   border: 0;
   background: #ffffff;
   display: inline-block;
@@ -154,7 +141,7 @@ body {
 }
 
 .match--buttons i {
-  font-size: 52px;
+  font-size: 32px;
   vertical-align: middle;
 }
 
