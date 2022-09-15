@@ -22,3 +22,20 @@ vi:
       success_message: "Đã like <3"
     match:
       title: "Ghép đôi"
+      trigger_btn: "Bo loc"
+    filter:
+      title: "Bo loc"
+      card_1:
+        header: "Gioi tinh"
+        choice_0: "Nam"
+        choice_1: "Nu"
+      card_2:
+        header: "Do tuoi"
+      card_3:
+        header: "Noi sinh song"
+        choice_1: "Ha Noi"
+        choice_2: "Thanh pho Ho Chi Minh"
+        choice_3: "Da nang"
+      btn: "Tim kiem"
+    errors:
+      no_user: "There's no users matching the requirements."

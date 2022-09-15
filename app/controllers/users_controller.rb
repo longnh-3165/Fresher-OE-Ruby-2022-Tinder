@@ -9,4 +9,6 @@ class UsersController < ApplicationController
     flash[:danger] = t ".not_found"
     redirect_to root_path
   end
+
+  def new; end
 end

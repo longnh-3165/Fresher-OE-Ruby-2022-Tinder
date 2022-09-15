@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2022_09_08_080610) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.datetime "date_of_birth"
+    t.date "date_of_birth"
     t.integer "gender"
     t.string "email"
     t.string "facebook"

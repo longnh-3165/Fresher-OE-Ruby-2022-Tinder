@@ -1,6 +1,9 @@
 <% provide :title, t(".title") %>
 <div class="match">
-  <div class="bg--img"></div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-dark btn-lg mr-auto" data-toggle="modal" data-target="#exampleModal">
+    <%= t ".trigger_btn" %>
+  </button>
 
   <div class="match--status">
     <i class="fa fa-remove"></i>
@@ -23,8 +26,11 @@
                 <i class="fa fa-heart"></i>
               <% end %>
             <% end %>
-          </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Modal -->
+  <%= render "filter" %>
 </div>

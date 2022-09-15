@@ -22,3 +22,20 @@ en:
       success_message: "Liked <3"
     match:
       title: "Matching"
+      trigger_btn: "Filters"
+    filter:
+      title: "Filters"
+      card_1:
+        header: "Gender"
+        choice_0: "Male"
+        choice_1: "Female"
+      card_2:
+        header: "Age"
+      card_3:
+        header: "Place"
+        choice_1: "Hanoi"
+        choice_2: "HCM City"
+        choice_3: "Danang"
+      btn: "Search"
+    errors:
+      no_user: "There's no users matching the requirements."
