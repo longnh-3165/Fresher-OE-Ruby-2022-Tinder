@@ -3,8 +3,8 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   belongs_to :country, optional: true
-  enum gender: {male: 0, female: 1}
   enum type_of: {basic: 0, gold: 1}
+  enum gender: {male: 0, female: 1}
   has_many :messages, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
                                   foreign_key: :follower_id, dependent: :destroy

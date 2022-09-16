@@ -48,3 +48,30 @@ en:
       phone: "Phone"
       country: "Country"
       description: "Description"
+  admin_pages:
+    index:
+      table_title: "List of users"
+      name: "Ten"
+      actived: "Activated?"
+      ad: "Admin?"
+      gold: "Upgrade status"
+      liked: "Liked-by list"
+      liking: "Liking list"
+      act: "Actions"
+      info: "Info"
+      up: "Upgrade"
+      del: "Delete"
+  layouts:
+    header:
+      fil_btn: "Filters"
+      inf_ref: "Info"
+      ad_ref: "Admin"
+      out: "Log out"
+      lang: "Languages"
+  shared:
+    followers_list:
+      title: "'s followers"
+      unit: " followers"
+    following_list:
+      title: "'s following"
+      prefix: "Following "
