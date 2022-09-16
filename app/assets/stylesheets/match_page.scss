@@ -15,7 +15,7 @@ body {
 }
 
 .match {
-  background: #fd3a73;
+  background: #dd94aa;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -73,10 +73,10 @@ body {
 .match--card {
   display: inline-block;
   width: 90vw;
-  max-width: 400px;
   height: 70vh;
   background: #ffffff;
   padding-bottom: 40px;
+  padding-top: 100px;
   border-radius: 8px;
   overflow: hidden;
   position: absolute;
@@ -141,7 +141,7 @@ body {
 }
 
 .match--buttons i {
-  font-size: 32px;
+  font-size: 50px;
   vertical-align: middle;
 }
 

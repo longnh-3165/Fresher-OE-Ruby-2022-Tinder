@@ -1,56 +1,50 @@
 en:
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+  time:
+    formats:
+      default: "%H:%M:%S %Y/%m/%d"
+      short: "%Y/%m/%d %H:%M"
   base_title: "Tinder App <3"
   application:
     en: "English"
-    vi: "Vietnamese"
-  landing_pages:
-    home:
-      title: "Home"
-      welcome: "Welcome to the Sun* Tinder"
-      first_intro: "Sun* Tinder is a social network template that can be used to connect people"
-      second_intro: "Make a love from friends, don't make friend from loves"
-      sign_up: "Sign up now !"
-      login: "Login now"
-      remember_me: "Remember me"
-      forgot_password: "Forgot password ?"
-      don't_have_account: "Don't have an account ?"
-      register: "Register now !"
-      name_label: Name Account
-      password_label: Password
   match_pages:
     create:
       success_message: "Liked <3"
       matched: "Oh! You and other person had matched, click here to know more !"
     match:
+      user: "User"
       title: "Matching"
+      trigger_btn: "Filters"
+      name: "Name:"
+      date_of_birth: "Date of Birth:"
+      gender: "Gender:"
+      male: "Male"
+      female: "Female"
+      country: "Country:"
+      description: "Description:"
     filter:
       title: "Filters"
       card_1:
-        header: "Gender"
-        choice_0: "Male"
-        choice_1: "Female"
-      card_2:
-        header: "Age"
-      card_3:
-        header: "Place"
-        choice_1: "Hanoi"
-        choice_2: "HCM City"
-        choice_3: "Danang"
       btn: "Search"
     errors:
       no_user: "There's no users matching the requirements."
-  admin_pages:
-    index:
+  users:
+    show:
+      about: "About"
+      edit_button: "Edit profile"
+      time_line: "Time line"
+      day_join: "Day join"
+      follow: "Follow"
       name: "Name"
-      gold: "Upgrade status"
-      act: "Actions"
-      info: "Info"
-      up: "Upgrade"
-      del: "Delete"
-  layouts:
-    header:
-      fil_btn: "Filters"
-      inf_ref: "Info"
-      ad_ref: "Admin"
-      out: "Log out"
-      lang: "Languages"
+      date_of_birth: "Date of Birth"
+      gender: "Gender"
+      male: "Male"
+      female: "Female"
+      email: "Email"
+      facebook: "Facebook"
+      phone: "Phone"
+      country: "Country"
+      description: "Description"

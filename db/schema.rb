@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_08_080610) do
+ActiveRecord::Schema.define(version: 2022_09_15_064432) do
 
   create_table "countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -68,15 +68,15 @@ ActiveRecord::Schema.define(version: 2022_09_08_080610) do
     t.boolean "actived"
     t.boolean "admin"
     t.integer "type_of"
-    t.bigint "countries_id"
+    t.bigint "country_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
-    t.index ["countries_id"], name: "index_users_on_countries_id"
+    t.index ["country_id"], name: "index_users_on_country_id"
   end
 
   add_foreign_key "messages", "users", column: "user_receive_id"
   add_foreign_key "messages", "users", column: "user_send_id"
   add_foreign_key "notifications", "users", column: "users_id"
-  add_foreign_key "users", "countries", column: "countries_id"
+  add_foreign_key "users", "countries"
 end
