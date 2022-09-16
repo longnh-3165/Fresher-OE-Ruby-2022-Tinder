@@ -31,4 +31,14 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t ".not_found"
     redirect_to root_url
   end
+
+  def authorize_admin
+    return if current_user.admin?
+
+    redirect_to root_path, status: :unauthorized
+  end
+
+  def get_users
+    @pagy, @users = pagy(User.all, items: Settings.digits.size_of_page)
+  end
 end
