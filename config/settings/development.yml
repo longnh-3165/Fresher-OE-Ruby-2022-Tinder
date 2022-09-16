@@ -11,5 +11,3 @@ place:
   city_3: 3
 age:
   range: [20, 49]
-page_add:
-  home: "home"

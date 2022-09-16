@@ -30,8 +30,8 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <h3><%= t (".time_line") %></h3>
-                            <h5><%= t (".day_join") %> <p><%= I18n.l(@user.created_at) %></p></h5><br/>
+                            <h5><%= t (".time_line") %></h5>
+                            <p><%= t (".day_join") %> <%= I18n.l(@user.created_at) %></p><br/>
                             <h5><%= t (".follow") %></h5>
                             <div class="stats">
                               <strong id="following" class="stat">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
-                          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label><%= t (".name") %></label>
@@ -106,11 +106,11 @@
                                         </div>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <p><%= @user.description %></p>
-                                  </div>
-                                </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><%= @user.description %></p>
+                                            </div>
+                                        </div>
                             </div>
                         </div>
                     </div>

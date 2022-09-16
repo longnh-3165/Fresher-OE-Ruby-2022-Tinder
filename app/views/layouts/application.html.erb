@@ -11,9 +11,6 @@
   </head>
 
   <body>
-    <% unless params[:action] == Settings.page_add.home %>
-      <%= render "layouts/header" %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
