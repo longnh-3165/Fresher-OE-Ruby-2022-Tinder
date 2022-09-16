@@ -55,21 +55,6 @@ en:
       btn: "Search"
     errors:
       no_user: "There's no users matching the requirements."
-  admin_pages:
-    index:
-      name: "Name"
-      gold: "Upgrade status"
-      act: "Actions"
-      info: "Info"
-      up: "Upgrade"
-      del: "Delete"
-  layouts:
-    header:
-      fil_btn: "Filters"
-      inf_ref: "Info"
-      ad_ref: "Admin"
-      out: "Log out"
-      lang: "Languages"
   users:
     show:
       about: "About"

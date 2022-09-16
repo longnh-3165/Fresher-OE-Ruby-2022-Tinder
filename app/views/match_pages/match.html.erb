@@ -19,11 +19,7 @@
             <hr>
             <h3><li><%= t (".name") %> <%= user.name %></li></h3>
             <li><%= t (".date_of_birth") %> <%= I18n.l(user.date_of_birth) %></li>
-            <% if user.gender == 0 %>
-              <li><%= t (".gender") %> <%= t (".male") %></li>
-            <% else user.gender != 0 %>
-              <li><%= t (".gender") %> <%= t (".female") %></li>
-            <% end %>
+              <li><%= t (".gender") %> <%= user.gender %></li>
             <li><%= t (".country") %> <%= user.country_name %></li>
             <li><%= t (".description") %> <%= user.description %></li>
           </ul>
