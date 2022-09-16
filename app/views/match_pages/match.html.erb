@@ -8,20 +8,28 @@
     <div class="match--cards">
       <% @users.each do |user| %>
         <div class="match--card match-card-<%= user.id %>">
+        <div class="row">
           <img src="https://placeimg.com/600/300/people">
-          <h3><%= user.name %></h3>
-          <h4><%= user.date_of_birth %></h4>
-          <p><%= user.description %></p>
+          <ul>
+            <h1><%= t (".user") %></h1>
+            <hr>
+            <h3><li><%= t (".name") %> <%= user.name %></li></h3>
+            <li><%= t (".date_of_birth") %> <%= I18n.l(user.date_of_birth) %></li>
+            <li><%= t (".gender") %> <%= user.gender %></li>
+            <li><%= t (".country") %> <%= user.country_name %></li>
+            <li><%= t (".description") %> <%= user.description %></li>
+          </ul>
+          </div>
           <div class="match--buttons">
             <%= form_for(new_relationship, url: match_pages_path, remote: true) do |f| %>
               <div>
                 <%= hidden_field_tag :id, user.id %>
               </div>
-              <button class="nope"><i class="fa fa-remove"></i></button>
               <%= button_tag "", class: "love" do %>
                 <i class="fa fa-heart"></i>
               <% end %>
             <% end %>
+            <button class="nope float-left"><i class="fa fa-remove"></i></button>
         </div>
       </div>
     <% end %>

@@ -3,6 +3,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   belongs_to :country, optional: true
+  enum gender: {male: 0, female: 1}
   enum type_of: {basic: 0, gold: 1}
   has_many :messages, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
@@ -11,6 +12,9 @@ class User < ApplicationRecord
                                   foreign_key: :followed_id, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships
+
+  delegate :name, to: :country, prefix: true, allow_nil: true
+
   has_secure_password
 
   scope :by_gender,
@@ -21,7 +25,7 @@ class User < ApplicationRecord
            min_age){where(date_of_birth: get_filter_range(min_age, max_age))}
 
   scope :by_place,
-        ->(place){where(countries_id: place.presence || Settings.place.range)}
+        ->(place){where(country_id: place.presence || Settings.place.range)}
 
   class << self
     def digest string
