@@ -48,3 +48,30 @@ vi:
       phone: "Số Điện Thoại"
       country: "Quê quán"
       description: "Mô tả"
+  admin_pages:
+    index:
+      table_title: "List of users"
+      name: "Ten"
+      actived: "Da kich hoat?"
+      ad: "Admin"
+      gold: "Tinh trang nang cap"
+      act: "Hanh dong"
+      liked: "Duoc thich boi"
+      liking: "Da thich"
+      info: "Thong tin"
+      up: "Nang cap"
+      del: "Xoa"
+  layouts:
+    header:
+      fil_btn: "Bo loc"
+      inf_ref: "Thong tin"
+      ad_ref: "Quan tri"
+      out: "Dang xuat"
+      lang: "Ngon ngu"
+shared:
+    followers_list:
+      title: " duoc thich boi"
+      unit: " nguoi thich"
+    following_list:
+      title: "dang thich"
+      prefix: "Dang thich"
