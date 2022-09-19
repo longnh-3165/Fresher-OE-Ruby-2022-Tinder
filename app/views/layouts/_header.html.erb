@@ -20,6 +20,7 @@
             </button>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Mes_1</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Mes_2</a>
             </div>
           </div>
@@ -32,6 +33,7 @@
           </button>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Noti_1</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Noti_2</a>
           </div>
         </div>
@@ -43,9 +45,11 @@
           </button>
           <div class="dropdown-menu">
             <%= link_to t(".inf_ref"), current_user, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
             <% if current_user.admin %>
               <%= link_to t(".ad_ref"), admin_path, class: "dropdown-item" %>
             <% end %>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#"><%= t ".out" %></a>
           </div>
         </div>
@@ -56,8 +60,13 @@
             <i class="fa-solid fa-language"> <%= t ".lang" %></i>
           </button>
           <div class="dropdown-menu">
-            <%= link_to t("application.en"), locale: :en, class: "dropdown-item" %>
-            <%= link_to t("application.vi"), locale: :vi, class: "dropdown-item" %>
+            <div class="dropdown-item">
+              <%= link_to t("application.en"), locale: :en %>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item">
+              <%= link_to t("application.vi"), locale: :vi %>
+            </div>
           </div>
         </div>
       </li>
