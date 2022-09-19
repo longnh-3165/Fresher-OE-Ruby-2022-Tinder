@@ -48,6 +48,10 @@ vi:
       phone: "Số Điện Thoại"
       country: "Quê quán"
       description: "Mô tả"
+  messages:
+    message_form:
+      message_label: "Tin nhắn"
+      send: "Gửi"
   admin_pages:
     index:
       table_title: "List of users"

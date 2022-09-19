@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :users, only: %i(show)
     resources :relationships, only: %i(create)
     resources :match_pages, only: %i(create)
+    resources :messages, only: %i(show create index)
+    mount ActionCable.server, at: "/cable"
   end
 end

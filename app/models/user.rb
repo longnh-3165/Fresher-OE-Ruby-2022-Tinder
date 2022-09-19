@@ -3,9 +3,9 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   belongs_to :country, optional: true
-  enum type_of: {basic: 0, gold: 1}
   enum gender: {male: 0, female: 1}
-  has_many :messages, dependent: :destroy
+  enum type_of: {basic: 0, gold: 1}
+  has_many :messages, dependent: :destroy, foreign_key: :user_send_id
   has_many :active_relationships, class_name: Relationship.name,
                                   foreign_key: :follower_id, dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
@@ -46,8 +46,13 @@ class User < ApplicationRecord
     following << other_user
   end
 
-  def like_each_other? other_user
-    following.include? other_user and followers.include? other_user
+  def like_each_other? other_user, current_user
+    return unless following.include?(other_user) &&
+                  followers.include?(other_user)
+
+    relationship = Relationship.get_relationship(other_user)
+                               .get_relationship(current_user)
+    relationship.update_all(status: true)
   end
 
   def remember

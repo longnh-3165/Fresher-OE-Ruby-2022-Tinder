@@ -48,6 +48,10 @@ en:
       phone: "Phone"
       country: "Country"
       description: "Description"
+  messages:
+    message_form:
+      message_label: "Message"
+      send: "Send"
   admin_pages:
     index:
       table_title: "List of users"
