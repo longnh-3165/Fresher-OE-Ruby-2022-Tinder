@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :users, only: %i(show)
     resources :relationships, only: %i(create)
     resources :match_pages, only: %i(create)
+    resources :admin_pages do
+      patch :upgrade, on: :member
+    end
   end
 end

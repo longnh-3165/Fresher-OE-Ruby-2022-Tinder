@@ -7,9 +7,23 @@ vi:
     formats:
       default: "%H:%M:%S %d/%m/%Y"
       short: "%d/%m/%Y %H:%M"
-  base_title: "Tinder App <3"
+  base_title: "Tinder"
   application:
-    en: "English"
+    en: "Tieng Anh"
+    vi: "Tieng Viet"
+  landing_pages:
+    home:
+      title: "Dang nhap"
+      welcome: "Chao mung toi Sun* Tinder"
+      first_intro: "Day la mot mang xa hoi tao ra de ket noi moi nguoi"
+      second_intro: "Make a love from friends, don't make friend from loves"
+      remember_me: "Nho tui :v"
+      login: "Dang nhap"
+      forgot_password: "Quen mat khau"
+      don't_have_account: "Chua co tai khoan?"
+      register: "Hay dang ky ngay hom nay"
+      name_label: "Tai khoan"
+      password_label: "Mat khau"
   match_pages:
     create:
       success_message: "Đã like <3"
@@ -60,18 +74,27 @@ vi:
       liking: "Da thich"
       info: "Thong tin"
       up: "Nang cap"
+      down: "Ha cap"
       del: "Xoa"
+    upgrade:
+      sc_mes: "Edited!"
+      f_mes: "Failed to edit"
+    upgrade_confirm:
+      alert: "Ban chac chu?"
+      x_btn: "Huy"
+      v_btn: "Toi chot :v"
   layouts:
     header:
+      slogan: "Tim kiem mot nua cua ban"
       fil_btn: "Bo loc"
       inf_ref: "Thong tin"
       ad_ref: "Quan tri"
       out: "Dang xuat"
       lang: "Ngon ngu"
-shared:
-    followers_list:
-      title: " duoc thich boi"
-      unit: " nguoi thich"
-    following_list:
-      title: "dang thich"
-      prefix: "Dang thich"
+  shared:
+      followers_list:
+        title: " duoc thich boi"
+        unit: " nguoi thich"
+      following_list:
+        title: "dang thich"
+        prefix: "Dang thich"

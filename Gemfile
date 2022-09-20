@@ -19,6 +19,7 @@ gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.6", ">= 6.1.6.1"
 gem "sass-rails", ">= 6"
+gem "toastr-rails"
 
 group :development do
   gem "listen", "~> 3.3"
