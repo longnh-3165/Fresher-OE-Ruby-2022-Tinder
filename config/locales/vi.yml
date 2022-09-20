@@ -28,6 +28,18 @@ vi:
     create:
       success_message: "Đã like <3"
       matched: "Oh! Bạn và ai đó đã kết nối với nhau, bấm vào để biết thêm nhé !"
+      liking: "Da thich"
+      info: "Thong tin"
+      up: "Nang cap"
+      down: "Ha cap"
+      del: "Xoa"
+    upgrade:
+      sc_mes: "Edited!"
+      f_mes: "Failed to edit"
+    upgrade_confirm:
+      alert: "Ban chac chu?"
+      x_btn: "Huy"
+      v_btn: "Toi chot :v"
     match:
       user: "Người dùng"
       title: "Ghép đôi"
@@ -62,6 +74,10 @@ vi:
       phone: "Số Điện Thoại"
       country: "Quê quán"
       description: "Mô tả"
+  messages:
+    message_form:
+      message_label: "Tin nhắn"
+      send: "Gửi"
   admin_pages:
     index:
       table_title: "List of users"

@@ -1,0 +1,3 @@
+<% if @users.any? %>
+  <%=  render partial: "member", collection: @users, as: :user %>
+<% end %>

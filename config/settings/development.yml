@@ -13,3 +13,4 @@ age:
   range: [20, 49]
 page_add:
   home: "home"
+date: "%H:%M %d/%m/%Y"

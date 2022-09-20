@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_15_064432) do
+ActiveRecord::Schema.define(version: 2022_09_20_071201) do
 
   create_table "countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_064432) do
 
   create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
-    t.boolean "is_read"
+    t.boolean "is_read", default: false
     t.bigint "user_send_id"
     t.bigint "user_receive_id"
     t.datetime "created_at", precision: 6, null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_09_15_064432) do
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 2022_09_15_064432) do
     t.text "description"
     t.string "password_digest"
     t.boolean "actived"
-    t.boolean "admin"
-    t.integer "type_of"
+    t.boolean "admin", default: false
+    t.integer "type_of", default: 0
     t.bigint "country_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
