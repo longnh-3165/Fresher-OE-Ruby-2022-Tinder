@@ -18,13 +18,29 @@ require("jquery")
 //= require jquery_ujs
 //= require hammer
 //= require jquery.hammer
+//= require toastr
 //= require_tree .
 
 window.$ = jQuery;
+global.toastr = require("toastr")
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+}
 
 $(document).ready(function () {
   ("use strict");
@@ -150,22 +166,3 @@ $(document).ready(function () {
   nope.addEventListener("click", nopeListener);
   love.addEventListener("click", loveListener);
 });
-
-global.toastr = require("toastr")
-
-toastr.options = {
-  "closeButton": false,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-right",
-  "preventDuplicates": false,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}

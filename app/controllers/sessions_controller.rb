@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by name: params.dig(:session, :name)&.downcase
+    user = User.find_by email: params.dig(:session, :email)&.downcase
 
     if user&.authenticate(params.dig(:session, :password))
       log_in user

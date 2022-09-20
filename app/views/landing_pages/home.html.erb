@@ -6,19 +6,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-            <div>
+            <div class="align-self-center">
               <figure><%= image_tag("pngegg.png", alt: "Tinder logo") %></figure>
               <h1><%= t ".welcome" %></h1>
               <p>
                 <%= t ".first_intro" %>
                 <br>
                 <%= t ".second_intro" %>
-                  <nav>
-                    <ul>
-                      <li><%= link_to t("application.en"), locale: :en %></li>
-                      <li><%= link_to t("application.vi"), locale: :vi %></li>
-                    </ul>
-                  </nav>
               </p>
             </div>
           </div>
@@ -29,8 +23,8 @@
                 <span></span>
               </div>
               <%= form_for :session,html: {class: "we-form"}, url: login_path do |f| %>
-                <%= f.label :name, t(".name_label") %>
-                <%= f.text_field :name, class: "form-control" %>
+                <%= f.label :email, t(".name_label") %>
+                <%= f.email_field :email, class: "form-control" %>
                 <%= f.label :password, t(".password_label") %>
                 <%= f.password_field :password, class: "form-control" %>
                 <%= f.label :remember_me, class: "check_box" do %>

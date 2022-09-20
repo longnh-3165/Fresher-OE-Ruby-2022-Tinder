@@ -23,7 +23,16 @@
         <td>
           <i class="fa-solid <%= admin_icon(user) %>"></i>
         </td>
-        <td><%= user.type_of %></td>
+        <td>
+          <%= user.type_of %>
+          <!-- Button trigger modal -->
+          <button type="button"
+                  class="btn <%= type_of_btn(user) %> <%= disabled_btn(user) %>"
+                  data-toggle="modal"
+                  data-target=<%= "#confirmModal" + user.id.to_s %>>
+            <%= act(user) %>
+          </button>
+        </td>
         <td>
           <button class="btn btn-info btn-block" data-toggle="modal" data-target= <%= "#followersModal" + user.id.to_s %>>
             <i class="fa-solid fa-address-book"></i>
@@ -39,7 +48,6 @@
             <button class="btn btn-info" data-toggle="modal" data-target= <%= "#userModal" + user.id.to_s %>>
               <i class="fa-solid fa-info"></i>
             </button>
-            <button class="btn btn-warning"><%= t ".up" %></button>
             <button class="btn btn-danger"><i class="fa-solid fa-user-slash"></i></button>
           </div>
         </td>
@@ -47,6 +55,7 @@
       <%= render "shared/followers_list", user: user %>
       <%= render "shared/following_list", user: user %>
       <%= render "shared/user_info_modal", user: user %>
+      <%= render "upgrade_confirm", user: user %>
     <% end %>
   </tbody>
 </table>
