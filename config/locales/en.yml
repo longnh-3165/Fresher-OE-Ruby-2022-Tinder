@@ -55,6 +55,13 @@ en:
       btn: "Search"
     errors:
       no_user: "There's no users matching the requirements."
+    upgrade:
+      sc_mes: "Edited!"
+      f_mes: "Failed to edit"
+    upgrade_confirm:
+      alert: "Are y sure?"
+      x_btn: "Cancel"
+      v_btn: "Sure"
   users:
     show:
       about: "About"
@@ -72,6 +79,10 @@ en:
       phone: "Phone"
       country: "Country"
       description: "Description"
+  messages:
+    message_form:
+      message_label: "Message"
+      send: "Send"
   admin_pages:
     index:
       table_title: "List of users"

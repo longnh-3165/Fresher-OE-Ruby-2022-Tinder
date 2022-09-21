@@ -40,7 +40,7 @@ class MatchPagesController < ApplicationController
   private
 
   def check_relationship
-    @connected = current_user.like_each_other? @user
+    @connected = current_user.like_each_other? @user, current_user
     @matched = t ".matched"
   end
 

@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :admin_pages do
       patch :upgrade, on: :member
     end
+    resources :messages, only: %i(show create index)
+    mount ActionCable.server, at: "/cable"
   end
 end

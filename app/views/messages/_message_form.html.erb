@@ -1,0 +1,9 @@
+<%= form_for(@message) do |f| %>
+  <div>
+    <%= f.hidden_field :user_receive_id, value: params[:id] %>
+    <%= f.hidden_field :room_id, value: @room_id %>
+  </div>
+  <%= f.label :message, t(".message_label") %>
+  <%= f.text_area :content, class: "form-control clear-chat" %>
+  <%= button_tag t(".send"), class: "btn btn-info btn-rounded float-end", id: "submit" %>
+<% end %>
