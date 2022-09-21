@@ -6,6 +6,14 @@ gender:
   choice_1: 1
   m: "male"
   fem: "female"
+type_of:
+  range: [0, 1]
+actived:
+  range: [0, 1]
+admin:
+  range: [0, 1]
+sort_by:
+  range: [0, 1]
 place:
   range: [1, 2, 3]
   city_1: 1

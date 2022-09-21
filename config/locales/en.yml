@@ -140,3 +140,14 @@ en:
     error_messages:
       prefix: "The form contains "
       unit: "error"
+    search:
+      filter: "Filter"
+      search_by: "Search by"
+      name: "Name"
+      actived: "Actived"
+      admin: "Admin"
+      upgrade_status: "Upgrade status"
+      select: "Select"
+      basic: "Basic"
+      gold: "Gold"
+      search: "Search"
