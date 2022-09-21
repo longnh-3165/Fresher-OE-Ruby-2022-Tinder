@@ -3,8 +3,7 @@ module MatchPagesHelper
 
   class_methods do
     def get_filter_range min, max
-      now = Time.now.utc.to_date
-      now.years_ago(max)..now.years_ago(min)
+      dob(max)..dob(min)
     end
   end
 

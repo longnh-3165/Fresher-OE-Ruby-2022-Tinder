@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="col-md-2">
-      <input type="button" class="profile-edit-btn" name="btnAddMore" value="<%= t (".edit_button") %>"/>
+      <%= link_to t(".edit_button"), edit_user_path(current_user), class: "profile-edit-btn" %>
     </div>
   </div>
   <div class="row">

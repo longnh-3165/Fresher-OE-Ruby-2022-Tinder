@@ -11,9 +11,7 @@
   </head>
 
   <body>
-    <% unless params[:action] == Settings.page_add.home %>
-      <%= render "layouts/header" %>
-    <% end %>
+    <%= render "layouts/header" %>
     <%= render partial: "layouts/flash_messages", flash: flash %>
     <%= yield %>
   </body>

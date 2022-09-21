@@ -12,4 +12,9 @@ class SessionsController < ApplicationController
       flash.now[:danger] = t(".failure_message")
     end
   end
+
+  def destroy
+    log_out
+    redirect_to root_url
+  end
 end

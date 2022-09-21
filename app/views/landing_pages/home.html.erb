@@ -34,7 +34,12 @@
                 <%= f.submit t(".login") %>
               <% end %>
               <a class="forgot underline"><%= t ".forgot_password" %></a>
-              <span><%= t ".don't_have_account" %><a class="we-account underline" title=""><%= t ".register" %></a></span>
+              <span>
+                <%= t ".don't_have_account" %>
+                <a class="we-account underline" title="">
+                  <%= link_to t(".register"), signup_path %>
+                </a>
+              </span>
             </div>
           </div>
         </div>

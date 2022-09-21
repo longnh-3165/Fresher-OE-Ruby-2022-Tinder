@@ -4,6 +4,8 @@ gender:
   range: [0, 1]
   choice_0: 0
   choice_1: 1
+  m: "male"
+  fem: "female"
 place:
   range: [1, 2, 3]
   city_1: 1
@@ -14,3 +16,10 @@ age:
 page_add:
   home: "home"
 date: "%H:%M %d/%m/%Y"
+regex:
+  email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+  phone: !ruby/regexp '/0[3-9]{1}[0-9]{8}/'
+pw:
+  min: 6
+des:
+  max: 500

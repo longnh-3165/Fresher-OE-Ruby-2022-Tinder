@@ -1,0 +1,53 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-8">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :password_confirmation, t(".pw_confirm") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <%= f.label :gender %>
+      <%= f.select :gender, [[t(".m"), Settings.gender.m], [t(".fem"), Settings.gender.fem]] %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :date_of_birth, "DOB" %>
+      <%= f.date_field :date_of_birth, min: dob(Settings.age.range[1]), max: dob(Settings.age.range[0]), class: "form-control" %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :country_id, "City" %>
+      <%= f.select :country_id, cities %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= f.label :phone %>
+      <%= f.telephone_field :phone ,class: "form-control" %>
+    </div>
+    <div class="form-group col-md-8">
+      <%= f.label :facebook %>
+      <%= f.url_field :facebook, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+      <%= f.label :description, "Bio" %>
+      <%= f.text_area :description %>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block" %>
+<% end %>
