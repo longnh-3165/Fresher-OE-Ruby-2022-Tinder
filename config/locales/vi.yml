@@ -126,12 +126,23 @@ vi:
       out: "Dang xuat"
       lang: "Ngon ngu"
   shared:
-      followers_list:
-        title: " duoc thich boi"
-        unit: " nguoi thich"
-      following_list:
-        title: "dang thich"
-        prefix: "Dang thich"
+    followers_list:
+      title: " duoc thich boi"
+      unit: " nguoi thich"
+    following_list:
+      title: "dang thich"
+      prefix: "Dang thich"
       error_messages:
         prefix: "Form nay co"
         unit: "loi"
+    search:
+      filter: "Bo loc"
+      search_by: "Tim kiem theo"
+      name: "Ten"
+      actived: "Da kich hoat"
+      admin: "Quan ly"
+      upgrade_status: "Loai tai khoan"
+      select: "Lua chon"
+      basic: "Binh thuong"
+      gold: "Vang"
+      search: "Tim kiem"

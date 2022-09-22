@@ -18,4 +18,8 @@ module AdminPagesHelper
   def disabled_btn user
     !user.actived? ? "disabled" : ""
   end
+
+  def load_type_of
+    User.type_ofs.map{|k, v| [k, v]}
+  end
 end

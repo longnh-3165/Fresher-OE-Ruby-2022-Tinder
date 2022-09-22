@@ -43,6 +43,20 @@ class User < ApplicationRecord
   scope :by_place,
         ->(place){where(country_id: place.presence || Settings.place.range)}
 
+  scope :by_name_like,
+        ->(name){where "name LIKE ?", "%#{name}%"}
+
+  scope :by_type_of,
+        ->(type_of){where(type_of: type_of.presence || Settings.type_of.range)}
+
+  scope :by_actived,
+        ->(actived){where(actived: actived.presence || Settings.actived.range)}
+
+  scope :by_admin,
+        ->(admin){where(admin: admin.presence || Settings.admin.range)}
+
+  CREATE_ATTRS = %i(name actived admin type).freeze
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

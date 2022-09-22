@@ -1,0 +1,30 @@
+<fieldset class="border p-2">
+  <legend class="w-auto"><%= t(".filter") %></legend>
+  <div class="row">
+    <%= form_tag admin_path, method: :get do |f| %>
+      <div class="col-2">
+        <h5><%= t(".search_by") %></h5>
+      </div>
+      <div class="col-2">
+        <%= text_field_tag :name, params[:name], class: "form-control", placeholder: t(".name") %>
+      </div>
+      <div class="col-1">
+        <%= check_box_tag :actived, {class: "form-control"} %>
+        <%= label_tag :actived, t(".actived") %>
+      </div>
+      <div class="col-1">
+        <%= check_box_tag :admin, {class: "form-control"} %>
+        <%= label_tag :admin, t(".admin") %>
+      </div>
+      <div class="col-1">
+        <%= label_tag :type_of, t(".upgrade_status") %>
+      </div>
+      <div class="col-2">
+        <%= select_tag :type_of, options_for_select(load_type_of), { include_blank: t(".select"), class: "form-control"} %>
+      </div>
+      <div class="col-2">
+        <%= submit_tag t(".search"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</fieldset>
