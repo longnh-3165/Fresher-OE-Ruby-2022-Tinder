@@ -42,11 +42,13 @@ toastr.options = {
   "hideEasing": "linear",
 }
 
-$(document).ready(function () {
+$(document).on("turbolinks:load", function () {
   ("use strict");
 
   const matchContainer = document.querySelector(".match");
   const allCards = document.querySelectorAll(".match--card");
+  var nope = document.getElementById('nope');
+  var love = document.getElementById('love');
 
   function initCards(card, index) {
     const newCards = document.querySelectorAll(".match--card:not(.removed)");
@@ -150,15 +152,6 @@ $(document).ready(function () {
       event.preventDefault();
     };
   }
-  $('.nope').on('click', function () {
-    createButtonListener(false);
-    initCards();
-  });
-
-  $('.love').on('click', function () {
-    createButtonListener(true);
-    initCards();
-  });
 
   const nopeListener = createButtonListener(false);
   const loveListener = createButtonListener(true);

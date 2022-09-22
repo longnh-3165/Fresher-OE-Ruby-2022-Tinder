@@ -15,6 +15,22 @@ class User < ApplicationRecord
 
   delegate :name, to: :country, prefix: true, allow_nil: true
 
+  ALLOWED_USER_PARAMS = %i(name email password
+                           password_confirmation date_of_birth
+                           gender country_id phone facebook
+                           description).freeze
+
+  before_save{email.downcase!}
+  validates :name, presence: true
+  validates :email, presence: true,
+                    format: {with: Settings.regex.email}, uniqueness: true
+  validates :password, presence: true, length: {minimum: Settings.pw.min}
+  validates :gender, presence: true
+  validates :date_of_birth, presence: true
+  validates :phone,
+            format: {with: Settings.regex.phone}
+  validates :description, length: {maximum: Settings.des.max}
+
   has_secure_password
 
   scope :by_gender,

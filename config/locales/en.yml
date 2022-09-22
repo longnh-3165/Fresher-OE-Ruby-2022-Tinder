@@ -79,6 +79,24 @@ en:
       phone: "Phone"
       country: "Country"
       description: "Description"
+    create:
+      success: "New user created!"
+      danger: "Failed to create new user."
+    update:
+      success: "Profile updated."
+      danger: "Failed to update."
+    find_user_by_id:
+      danger: "User not found."
+    form:
+      pw_confirm: "Confirmation"
+      m: "Male"
+      fem: "Female"
+    new:
+      title: "Sign up"
+      btn: "Create my account"
+    edit:
+      title: "Edit user"
+      btn: "Save changes"
   messages:
     message_form:
       message_label: "Message"
@@ -119,3 +137,6 @@ en:
     following_list:
       title: "'s following"
       prefix: "Following "
+    error_messages:
+      prefix: "The form contains "
+      unit: "error"

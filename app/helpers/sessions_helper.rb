@@ -34,4 +34,9 @@ module SessionsHelper
     cookies.delete :user_id
     cookies.delete :remember_token
   end
+
+  def log_out
+    session.delete :user_id
+    @current_user = nil
+  end
 end
