@@ -97,6 +97,8 @@ en:
     edit:
       title: "Edit user"
       btn: "Save changes"
+    unfollow:
+      btn: "Unfollow"
   messages:
     message_form:
       message_label: "Message"

@@ -1,3 +1,4 @@
+<% provide(:title, @user.name) %>
 <div class="container emp-profile">
   <div class="row">
     <div class="col-md-4">
@@ -34,14 +35,22 @@
           <p><%= t (".day_join") %> <%= I18n.l(@user.created_at) %></p><br/>
           <h5><%= t (".follow") %></h5>
           <div class="stats">
-            <strong id="following" class="stat">
+            <strong id="contact" class="stat">
               <%= @user.following.count %>
             </strong>
-            <%= t ".following" %>
+            <button class="btn btn-light"
+                    data-toggle="modal"
+                    data-target= <%= "#followingModal" + @user.id.to_s %>>
+              <%= t ".following" %>
+            </button>
             <strong id="followers" class="stat">
               <%= @user.followers.count %>
             </strong>
-            <%= t ".followers" %>
+            <button class="btn btn-light <%= @user.basic? ? "disabled" : "" %>"
+                    data-toggle="modal"
+                    data-target= <%= "#followersModal" + @user.id.to_s %>>
+              <%= t ".followers" %>
+            </button>
           </div>
         </div>
       </div>
@@ -82,9 +91,7 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label><%= t (".facebook") %></label>
-              </div>
-              <div class="col-md-6">
+                <label><%= t (".facebook")%></label>
                 <p><%= @user.facebook %></p>
               </div>
             </div>
@@ -117,3 +124,5 @@
     </div>
   </div>
 </div>
+<%= render "shared/followers_list", user: @user %>
+<%= render "shared/following_list", user: @user %>

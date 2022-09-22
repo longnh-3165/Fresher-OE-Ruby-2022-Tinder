@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     get "/signup", to: "users#new"
     delete "/logout", to: "sessions#destroy"
     resources :users
-    resources :relationships, only: %i(create)
+    resources :relationships, only: %i(create destroy)
     resources :match_pages, only: %i(create)
     resources :admin_pages do
       patch :upgrade, on: :member

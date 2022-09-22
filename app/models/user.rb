@@ -85,6 +85,10 @@ class User < ApplicationRecord
     relationship.update_all(status: true)
   end
 
+  def unfollow other_user
+    following.delete(other_user)
+  end
+
   def remember
     self.remember_token = User.new_token
     update_column :remember_digest, User.digest(remember_token)
