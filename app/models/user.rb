@@ -55,6 +55,10 @@ class User < ApplicationRecord
   scope :by_admin,
         ->(admin){where(admin: admin.presence || Settings.admin.range)}
 
+  scope :exclude_id, ->(id){where.not(id: id)}
+
+  scope :exclude_followed, ->(id){where.not(followed: id)}
+
   CREATE_ATTRS = %i(name actived admin type).freeze
 
   class << self

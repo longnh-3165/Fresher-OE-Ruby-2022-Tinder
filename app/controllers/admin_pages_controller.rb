@@ -35,6 +35,6 @@ class AdminPagesController < ApplicationController
                       .by_actived(params[:actived])
                       .by_admin(params[:admin])
                       .by_type_of(params[:type_of]),
-                  items: Settings.digits.size_of_page)
+                  items: Settings.digits.size_of_admin_page)
   end
 end

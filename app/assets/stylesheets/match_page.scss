@@ -1,155 +1,138 @@
-// Place all the styles related to the MatchPage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-*,
-*:before,
-*:after {
-  box-sizing: content-box;
-  padding: 0;
-  margin: 0;
+.tbg {
+  height: 80%;
+  width: 70%;
+  background-color: #fff;
+  margin: 0 auto;
+  border: 1px solid #c0c0c0;
 }
-
-body {
-  overflow: hidden;
-  font-family: sans-serif;
-}
-
-.match {
-  background: #dd94aa;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.tbgwrap { padding: 10px; }
+.theader { height: 65px; border-bottom: 1px solid #c0c0c0; }
+.theader i.fa-comments {
+  color: #c0c0c0;
+  font-size: 40px;
+  display: inline-block;
+  float: right;
+  padding: 10px 20px;
   position: relative;
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
 }
-
-.loaded.match {
-  opacity: 1;
-}
-
-.match--status {
-  position: absolute;
-  top: 50%;
-  margin-top: -30px;
-  z-index: 2;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-}
-
-.match--status i {
-  font-size: 100px;
-  opacity: 0;
-  transform: scale(0.3);
-  transition: all 0.2s ease-in-out;
-  position: absolute;
-  width: 100px;
-  margin-left: -50px;
-}
-
-.match_love .fa-heart {
-  opacity: 0.7;
-  transform: scale(1);
-}
-
-.match_nope .fa-remove {
-  opacity: 0.7;
-  transform: scale(1);
-}
-
-.match--cards {
-  flex-grow: 1;
-  padding-top: 40px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  z-index: 1;
-  margin-bottom: 200px;
-}
-
-.match--card {
+.theader i.fa-cog {
+  color: #c0c0c0;
+  font-size: 40px;
   display: inline-block;
-  width: 90vw;
-  max-width: 400px;
-  height: 70vh;
-  background: #ffffff;
-  padding-bottom: 40px;
-  border-radius: 8px;
+  float: left;
+  padding: 10px 20px;
+  position: relative;
+}
+.tlogo { width: 100px; margin: 0 auto; padding: 10px; }
+.tlogo img { width: 100px; }
+.tphoto {
+  width: 80%;
+  height: 80%;
   overflow: hidden;
-  position: absolute;
-  will-change: transform;
-  transition: all 0.3s ease-in-out;
-  cursor: -webkit-grab;
-  cursor: -moz-grab;
-  cursor: grab;
+  margin: 0 auto;
+  position: relative;
+  top: 15px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border: 1px solid #c0c0c0;
+  padding-bottom: 60px;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px #c0c0c0;
 }
-
-.moving.match--card {
-  transition: none;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  cursor: grabbing;
-}
-
-.match--card img {
-  max-width: 100%;
-  pointer-events: none;
-}
-
-.match--card h3 {
-  margin-top: 32px;
-  font-size: 32px;
-  padding: 0 16px;
-  pointer-events: none;
-}
-
-.match--card h4 {
-  margin-top: 32px;
-  font-size: 28px;
-  padding: 0 16px;
-  pointer-events: none;
-}
-
-.match--card p {
-  margin-top: 24px;
+.tphoto img {}
+.tname {
+  padding: 15px;
   font-size: 20px;
-  padding: 0 16px;
-  pointer-events: none;
+  font-family: 'Helvetica', sans-serif;
+  float: left;
 }
-
-.match--buttons {
-  flex: 0 0 100px;
-  text-align: center;
-  padding-top: 10px;
+.tname .age { font-weight: 200; }
+.tinfo { font-family: 'Helvetica', sans-serif; }
+.tinfo .fa-users, .tinfo .fa-book {
+  color: #c0c0c0;
+  float: right;
+  position: relative;
+  font-size: 24px;
+  padding: 12px;
 }
-
-.match--buttons button {
+.tcontrols {}
+.tno {
+  float: left;
+  background-color: #fff;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
-  line-height: 60px;
-  width: 60px;
-  border: 0;
-  background: #ffffff;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  position: relative;
   display: inline-block;
-  margin: 0 8px;
+  top: 50px;
+  left: 25px;
+  border: 10px solid #f0f0f0;
 }
-
-.match--buttons button:focus {
-  outline: 0;
+.tno i {
+  float: left;
+  color: #ff695b;
+  font-size: 80px;
+  padding-right: 17px;
 }
-
-.match--buttons i {
-  font-size: 32px;
-  vertical-align: middle;
+.ti {
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  left: 12px;
+  top: 30px;
+  border: 10px solid #f0f0f0;
 }
-
-.fa-heart {
-  color: #fface4;
+.ti .fa-info {
+  font-size: 23px;
+  padding: 15px 20px;
+  color: #398beb;
 }
-
-.fa-remove {
-  color: #cdd6dd;
+.tyes {
+  float: right;
+  background-color: #fff;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  top: 48px;
+  left: 0px;
+  border: 10px solid #f0f0f0;
+}
+.tyes i {
+  color: #5de19c;
+  font-size: 60px;
+  padding-right: 45px;
+}
+.credit {
+  width: 400px;
+  height: auto;
+  position: relative;
+  top: 60px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 2px 0px;
+}
+.credit a {
+  font-size: 7px;
+  letter-spacing: 5px;
+  color: #c0c0c0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Helvetica', sans-serif;
+  font-style: italic;
 }

@@ -33,6 +33,9 @@ vi:
       up: "Nang cap"
       down: "Ha cap"
       del: "Xoa"
+      like: "Thich"
+    next:
+      dont_like: "Bo qua"
     upgrade:
       sc_mes: "Edited!"
       f_mes: "Failed to edit"
@@ -40,7 +43,7 @@ vi:
       alert: "Ban chac chu?"
       x_btn: "Huy"
       v_btn: "Toi chot :v"
-    match:
+    index:
       user: "Người dùng"
       title: "Ghép đôi"
       trigger_btn: "Bo loc"

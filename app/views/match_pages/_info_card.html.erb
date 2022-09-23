@@ -1,0 +1,82 @@
+<div class="tbgwrap">
+  <div class="tphoto">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-work">
+          <img src="https://placeimg.com/600/300/people">
+          <h5><%= t (".day_join") %> <%= I18n.l(user.created_at) %></h5><br/>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+              <div class="col-md-6">
+                <label><%= t (".name") %></label>
+              </div>
+              <div class="col-md-6">
+                <p><%= user.name %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label><%= t (".date_of_birth") %></label>
+              </div>
+              <div class="col-md-6">
+                <p><%= I18n.l(user.date_of_birth) %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label><%= t (".gender") %></label>
+              </div>
+              <div class="col-md-6">
+                <p><%= user.gender %></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label><%= t (".country") %></label>
+              </div>
+              <div class="col-md-6">
+                <p><%= user.country_name %></p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+              <div class="col-md-6">
+                  <p><%= user.description %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="tcontrols col-6">
+      <%= form_tag next_path, method: :get do |f| %>
+        <div>
+          <%= hidden_field_tag :page, @pagy.next %>
+        </div>
+        <%= button_tag "", class: "tno" do %>
+          <i class="fa fa-times"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="tcontrols col-6">
+      <% unless current_user.following.include?(user) %>
+        <%= form_for(new_relationship, url: match_pages_path) do |f| %>
+          <div>
+            <%= hidden_field_tag :id, user.id %>
+            <%= hidden_field_tag :page, @pagy.next %>
+          </div>
+          <%= button_tag "", class: "tyes" do %>
+            <i class="fa fa-heart"></i>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

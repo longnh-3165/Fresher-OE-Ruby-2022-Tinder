@@ -1,0 +1,13 @@
+<% provide :title, t(".title") %>
+<div class="tbg">
+  <div class="theader">
+    <div class="tlogo">
+      <img src="https://worldvectorlogo.com/logos/tinder-1.svg" alt="Tinder Logo" title="Tinder Logo" />
+    </div>
+  </div>
+  <% if @users.any? %>
+    <%=  render partial: "info_card", collection: @users, as: :user %>
+  <% end %>
+  <!-- Modal -->
+  <%= render "filter" %>
+</div>

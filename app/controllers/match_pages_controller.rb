@@ -1,10 +1,10 @@
 class MatchPagesController < ApplicationController
   include MatchPagesHelper
 
-  before_action :get_users, :logged_in_user
+  before_action :logged_in_user
   before_action :find_user, only: %i(create)
 
-  def match
+  def index
     check_no_params = %i(gender_choice age_choice place_choice).all? do |key|
       params[key].nil?
     end
@@ -17,11 +17,17 @@ class MatchPagesController < ApplicationController
 
   def create
     current_user.like @user
-    check_relationship
-    @like = t ".success_message"
-    respond_to do |format|
-      format.js
+    if check_relationship
+      show_notice
+    else
+      flash[:info] = t(".like")
+      redirect_to match_path(page: params[:page])
     end
+  end
+
+  def next
+    flash[:info] = t(".dont_like")
+    redirect_to match_path(page: params[:page])
   end
 
   def filter gender, age, place
@@ -29,22 +35,25 @@ class MatchPagesController < ApplicationController
     @pagy,
     @users = pagy(User.by_gender(gender)
                       .by_age(age_range[1].to_i, age_range[0].to_i)
-                      .by_place(place),
-                  items: Settings.digits.size_of_page)
-    return if @users.present?
-
-    flash[:danger] = t ".errors.no_user"
-    get_users
+                      .by_place(place)
+                      .exclude_id(current_user),
+                  items: Settings.digits.size_of_match_page)
   end
 
   private
 
+  def show_notice
+    flash[:info] = t(".like")
+    flash[:success] = t(".matched")
+    redirect_to match_path(page: params[:page])
+  end
+
   def check_relationship
     @connected = current_user.like_each_other? @user, current_user
-    @matched = t ".matched"
   end
 
   def get_users
-    @pagy, @users = pagy(User.all, items: Settings.digits.size_of_page)
+    @pagy, @users = pagy(User.all.exclude_id(current_user),
+                         items: Settings.digits.size_of_match_page)
   end
 end
