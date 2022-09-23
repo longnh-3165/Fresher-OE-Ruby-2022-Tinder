@@ -102,9 +102,10 @@ class User < ApplicationRecord
     update_column :remember_digest, nil
   end
 
-  def authenticated? remember_token
-    return false unless remember_token
+  def authenticated? atrribute, token
+    digest = send("#{atrribute}_digest")
+    return false unless digest
 
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(token)
   end
 end

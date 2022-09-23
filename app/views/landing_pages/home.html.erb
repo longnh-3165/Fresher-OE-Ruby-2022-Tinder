@@ -1,49 +1,45 @@
 <% provide :title, t(".title") %>
-<div class="www-layout">
-  <section>
-    <div class="gap no-gap signin whitish medium-opacity">
-      <div class="bg-image"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="align-self-center">
-              <figure><%= image_tag("pngegg.png", alt: "Tinder logo") %></figure>
-              <h1><%= t ".welcome" %></h1>
-              <p>
-                <%= t ".first_intro" %>
-                <br>
-                <%= t ".second_intro" %>
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="we-login-register">
-              <div class="form-title">
-                <i class="fa fa-key"></i><%= t ".login" %>
-                <span></span>
-              </div>
-              <%= form_for :session,html: {class: "we-form"}, url: login_path do |f| %>
-                <%= f.label :email, t(".name_label") %>
-                <%= f.email_field :email, class: "form-control" %>
-                <%= f.label :password, t(".password_label") %>
-                <%= f.password_field :password, class: "form-control" %>
-                <%= f.label :remember_me, class: "check_box" do %>
-                  <%= f.check_box :remember_me %>
-                  <span><%= t(".remember_me") %></span>
-                <% end %>
-                <%= f.submit t(".login") %>
-              <% end %>
-              <a class="forgot underline"><%= t ".forgot_password" %></a>
-              <span>
-                <%= t ".don't_have_account" %>
-                <a class="we-account underline" title="">
-                  <%= link_to t(".register"), signup_path %>
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic">
+          <%= image_tag("icons8-tinder-316.png", alt: "Tinder logo") %>
       </div>
+
+      <%= form_for :session, html: {class: "login100-form"}, url: login_path do |f| %>
+        <span class="login100-form-title">
+          <%= t ".login" %>
+        </span>
+
+        <div class="wrap-input100">
+          <%= f.email_field :email, class: "input100", placeholder: t(".name_label"), required: true %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="wrap-input100">
+          <%= f.password_field :password, class: "input100", placeholder:t(".password_label"), required: true %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <%= f.submit t(".login"), class: "login100-form-btn" %>
+        </div>
+
+        <div class="text-center p-t-12"></div>
+
+        <div class="text-center p-t-136">
+          <a class="txt2" href="#">
+            <%= link_to t(".register"), signup_path %>
+            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      <% end %>
     </div>
   </section>
 </div>
