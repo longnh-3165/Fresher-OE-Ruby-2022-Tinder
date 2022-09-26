@@ -151,3 +151,13 @@ vi:
       basic: "Thường"
       gold: "Vàng"
       search: "Tìm kiếm"
+  account_activations:
+    edit:
+      success: "Tài khoản đã được kích hoạt"
+      danger: "Kích hoạt tài khoản thất bại!"
+  user_mailer:
+    account_activation:
+      subject: "Kích hoạt tài khoản"
+      title: "KÍch hoạt tài khoản Tinder"
+      msg: "Chào mừng tới Tinder! Để kích hoạt tài khoản của bạn, vui lòng nhấp chuột vào đường dẫn phía dưới:"
+      link: "KÍch hoạt tài khoản"
