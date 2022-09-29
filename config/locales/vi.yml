@@ -151,6 +151,8 @@ vi:
       basic: "Thường"
       gold: "Vàng"
       search: "Tìm kiếm"
+    not_found:
+      not_found: "Rất tiếc, Không tìm thấy user !"
   account_activations:
     edit:
       success: "Tài khoản đã được kích hoạt"

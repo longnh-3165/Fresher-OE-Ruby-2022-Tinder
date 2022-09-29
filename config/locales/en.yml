@@ -156,6 +156,8 @@ en:
       basic: "Basic"
       gold: "Gold"
       search: "Search"
+    not_found:
+      not_found: "Sorry, user not found !"
   account_activations:
     edit:
       success: "Account Activated"
