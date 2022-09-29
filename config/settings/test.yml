@@ -1,0 +1,34 @@
+digits:
+  size_of_match_page: 1
+  size_of_admin_page: 10
+gender:
+  range: [0, 1]
+  choice_0: 0
+  choice_1: 1
+  m: "male"
+  fem: "female"
+type_of:
+  range: [0, 1]
+actived:
+  range: [0, 1]
+admin:
+  range: [0, 1]
+sort_by:
+  range: [0, 1]
+place:
+  range: [1, 2, 3]
+  city_1: 1
+  city_2: 2
+  city_3: 3
+age:
+  range: [20, 49]
+page_add:
+  home: "home"
+date: "%H:%M %d/%m/%Y"
+regex:
+  email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+  phone: !ruby/regexp '/0[3-9]{1}[0-9]{8}/'
+pw:
+  min: 6
+des:
+  max: 500

@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     return if @user
 
     flash[:danger] = t ".not_found"
-    redirect_to root_path
+    redirect_to user_path(current_user)
   end
 
   def correct_user
