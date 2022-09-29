@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user, foreign_key: :user_send_id
 
-  scope :newest, ->{order :created_at}
+  scope :newest, ->{order created_at: :desc}
 
   scope :by_user_receive, ->(ids){where user_receive_id: ids}
 
