@@ -18,7 +18,7 @@ User.create!(name: "hoang long",
   date_of_birth = Faker::Date.birthday(min_age: 20, max_age: 49)
   gender = Faker::Number.between(from: 0, to: 1)
   email = Faker::Internet.email
-  phone = Faker::PhoneNumber.cell_phone
+  phone = "0932123123"
   description = "A lonely clone looking for another lonely clone"
   password = "123456"
   country_id = Faker::Number.between(from: 1, to: 3)
@@ -37,5 +37,5 @@ end
 users = User.order(:created_at).take(6)
 20.times do
   content = Faker::Lorem.sentence(word_count: 5)
-  users.each {|user| user.messages.create!(content: content)}
+  users.each{|user| user.messages.create!(content: content)}
 end
