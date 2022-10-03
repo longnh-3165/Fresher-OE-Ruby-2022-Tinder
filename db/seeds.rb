@@ -9,7 +9,7 @@ User.create!(name: "hoang long",
              phone: "0932123123",
              description: "hello world",
              password: "123456",
-             actived: true,
+             confirmed_at: Faker::Date.birthday,
              admin: true,
              type_of: 1,
              country_id: 3)
@@ -18,9 +18,10 @@ User.create!(name: "hoang long",
   date_of_birth = Faker::Date.birthday(min_age: 20, max_age: 49)
   gender = Faker::Number.between(from: 0, to: 1)
   email = Faker::Internet.email
-  phone = "0932123123"
+  phone = "0905111666"
   description = "A lonely clone looking for another lonely clone"
   password = "123456"
+  confirmed_at = Faker::Date.birthday
   country_id = Faker::Number.between(from: 1, to: 3)
   type_of = Faker::Number.between(from: 0, to: 1)
   User.create!(name: name,
@@ -30,7 +31,7 @@ User.create!(name: "hoang long",
                phone: phone,
                description: description,
                password: password,
-               actived: true,
+               confirmed_at: confirmed_at,
                type_of: type_of,
                country_id: country_id)
 end

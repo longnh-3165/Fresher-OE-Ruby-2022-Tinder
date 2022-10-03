@@ -1,5 +1,5 @@
 class RelationshipsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
 
   def destroy
     user = Relationship.find_by(params[:id]).followed

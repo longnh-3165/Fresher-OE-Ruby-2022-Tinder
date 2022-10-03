@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    root "landing_pages#home"
-    post "/login", to: "sessions#create"
+    devise_for :users
+    root "devise/sessions#new"
     get "/match", to: "match_pages#index"
     get "/admin", to: "admin_pages#index"
-    get "/signup", to: "users#new"
-    delete "/logout", to: "sessions#destroy"
     get "/next", to: "match_pages#next"
     resources :users
     resources :relationships, only: %i(create destroy)

@@ -1,6 +1,6 @@
 module AdminPagesHelper
   def actived_icon user
-    user.actived? ? "fa-check" : "fa-xmark"
+    user.confirmed? ? "fa-check" : "fa-xmark"
   end
 
   def admin_icon user
@@ -16,7 +16,7 @@ module AdminPagesHelper
   end
 
   def disabled_btn user
-    !user.actived? ? "disabled" : ""
+    !user.confirmed? ? "disabled" : ""
   end
 
   def load_type_of

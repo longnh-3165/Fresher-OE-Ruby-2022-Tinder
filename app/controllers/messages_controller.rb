@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :get_followed_users
   before_action :get_messages, :login_room, only: %i(show)
   def index; end

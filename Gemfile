@@ -7,6 +7,7 @@ gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 4.6.1"
 gem "config"
+gem "devise"
 gem "faker"
 gem "font-awesome-sass", "~> 6.2.0"
 gem "hammerjs-rails"
@@ -23,8 +24,6 @@ gem "sass-rails", ">= 6"
 gem "simplecov"
 gem "simplecov-rcov"
 gem "toastr-rails"
-gem "simplecov-rcov"
-gem "simplecov"
 
 group :development do
   gem "listen", "~> 3.3"
@@ -36,7 +35,6 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rails-controller-testing"
   gem "rspec-rails"
-  gem "shoulda-matchers", '~> 5.0'
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false

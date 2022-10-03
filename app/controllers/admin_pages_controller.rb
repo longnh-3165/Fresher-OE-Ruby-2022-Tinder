@@ -28,13 +28,12 @@ class AdminPagesController < ApplicationController
   end
 
   private
-
   def search
+    @users = User.by_name_like(params[:name])
+                 .by_admin(params[:admin])
+                 .by_type_of(params[:type_of])
+    @users = @users.by_confirmed if params[:actived]
     @pagy,
-    @users = pagy(User.by_name_like(params[:name])
-                      .by_actived(params[:actived])
-                      .by_admin(params[:admin])
-                      .by_type_of(params[:type_of]),
-                  items: Settings.digits.size_of_admin_page)
+    @users = pagy(@users, items: Settings.digits.size_of_admin_page)
   end
 end

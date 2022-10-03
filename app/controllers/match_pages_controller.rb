@@ -1,7 +1,7 @@
 class MatchPagesController < ApplicationController
   include MatchPagesHelper
 
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :find_user, only: %i(create)
 
   def index

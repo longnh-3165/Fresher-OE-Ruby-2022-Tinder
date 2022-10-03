@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   include MatchPagesHelper
-  attr_accessor :remember_token
 
   belongs_to :country, optional: true
   enum type_of: {basic: 0, gold: 1}
@@ -22,16 +25,11 @@ class User < ApplicationRecord
 
   before_save{email.downcase!}
   validates :name, presence: true
-  validates :email, presence: true,
-                    format: {with: Settings.regex.email}, uniqueness: true
-  validates :password, presence: true, length: {minimum: Settings.pw.min}
   validates :gender, presence: true
   validates :date_of_birth, presence: true
   validates :phone,
             format: {with: Settings.regex.phone}
   validates :description, length: {maximum: Settings.des.max}
-
-  has_secure_password
 
   scope :by_gender,
         ->(gender){where(gender: gender.presence || Settings.gender.range)}
@@ -49,8 +47,7 @@ class User < ApplicationRecord
   scope :by_type_of,
         ->(type_of){where(type_of: type_of.presence || Settings.type_of.range)}
 
-  scope :by_actived,
-        ->(actived){where(actived: actived.presence || Settings.actived.range)}
+  scope :by_confirmed, ->{where.not(confirmed_at: nil)}
 
   scope :by_admin,
         ->(admin){where(admin: admin.presence || Settings.admin.range)}
@@ -60,21 +57,6 @@ class User < ApplicationRecord
   scope :exclude_followed, ->(id){where.not(followed: id)}
 
   CREATE_ATTRS = %i(name actived admin type).freeze
-
-  class << self
-    def digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               BCrypt::Engine::MIN_COST
-             else
-               BCrypt::Engine.cost
-             end
-      BCrypt::Password.create string, cost: cost
-    end
-
-    def new_token
-      SecureRandom.urlsafe_base64
-    end
-  end
 
   def like other_user
     following << other_user
@@ -91,21 +73,5 @@ class User < ApplicationRecord
 
   def unfollow other_user
     following.delete(other_user)
-  end
-
-  def remember
-    self.remember_token = User.new_token
-    update_column :remember_digest, User.digest(remember_token)
-  end
-
-  def forget
-    update_column :remember_digest, nil
-  end
-
-  def authenticated? atrribute, token
-    digest = send("#{atrribute}_digest")
-    return false unless digest
-
-    BCrypt::Password.new(remember_digest).is_password?(token)
   end
 end
