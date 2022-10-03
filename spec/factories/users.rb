@@ -9,5 +9,6 @@ FactoryBot.define do
     phone{"0905123123"}
     description{"A lonely clone looking for another lonely clone"}
     password{"123456"}
+    confirmed_at{Date.today}
   end
 end

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to image_tag("icons8-tinder-16.png", size: "30", alt: t("base_title")), root_path, class: "navbar-brand" %>
+  <%= link_to image_tag("icons8-tinder-16.png", size: "30", alt: t("base_title")), match_path, class: "navbar-brand" %>
   <%= link_to t(".slogan"), match_path, class: "btn btn-light btn-lg", style: "font-family:MsMadi" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
     <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
                 <%= link_to t(".ad_ref"), admin_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
               <% end %>
-              <%= link_to t(".out"), logout_path,method: :delete, class: "dropdown-item" %>
+              <%= link_to t(".out"), destroy_user_session_path,method: :delete, class: "dropdown-item" %>
             </div>
           </div>
         </li>

@@ -74,8 +74,8 @@ RSpec.describe User, type: :model do
   describe "Scope" do
     let(:country_one){FactoryBot.create :country, id: 1}
     let(:country_two){FactoryBot.create :country, id: 2}
-    let!(:user_one){FactoryBot.create :user, name: "user1", date_of_birth: "1998-01-20", gender: 0, country_id: country_one.id, type_of: 0, actived: true, admin: true}
-    let!(:user_two){FactoryBot.create :user, name: "user2", date_of_birth: "1970-01-20", gender: 1, country_id: country_two.id, type_of: 1, actived: false, admin: false}
+    let!(:user_one){FactoryBot.create :user, name: "user1", date_of_birth: "1998-01-20", gender: 0, country_id: country_one.id, type_of: 0, admin: true}
+    let!(:user_two){FactoryBot.create :user, name: "user2", date_of_birth: "1970-01-20", gender: 1, country_id: country_two.id, type_of: 1, admin: false}
 
     context "find by gender with value" do
       it "input of gender has value" do
@@ -133,13 +133,13 @@ RSpec.describe User, type: :model do
 
     context "find by actived" do
       it "input of actived has value" do
-        expect(User.by_actived true).to eq([user_one])
+        expect(User.by_confirmed).to eq([user_one, user_two])
       end
     end
 
     context "find by actived with non-value" do
       it "input of actived hasn't value" do
-        expect(User.by_actived nil).to eq([user_one, user_two])
+        expect(User.all).to eq([user_one, user_two])
       end
     end
 
@@ -159,39 +159,6 @@ RSpec.describe User, type: :model do
   describe "Public instance methods" do
     let(:user){FactoryBot.create :user}
     let(:other_user){FactoryBot.create :user}
-
-    describe "#remember" do
-      it "returns true" do
-        expect(user.remember).to be true
-      end
-    end
-
-    describe "#forget" do
-      it "returns true" do
-        expect(user.forget).to be true
-      end
-    end
-
-    describe "#authenticated?" do
-      context "when correct token" do
-        it "returns true" do
-          token = User.new_token
-          remember_token = User.digest token
-          user.update_column :remember_digest, remember_token
-
-          expect(user.authenticated?(:remember, token)).to be true
-        end
-      end
-
-      context "when uncorrect token" do
-        it "returns false" do
-          remember_token = User.digest User.new_token
-          user.update_column :remember_digest, remember_token
-
-          expect(user.authenticated?(:remember, "unkown")).to be false
-        end
-      end
-    end
 
     describe "#like" do
       it "user like other user" do
@@ -222,26 +189,6 @@ RSpec.describe User, type: :model do
       it "user unlike other user" do
         user.like other_user
         expect(user.unfollow(other_user)).to eq([other_user])
-      end
-    end
-  end
-
-  describe "Public class methods" do
-    subject {User}
-
-    describe ".digest" do
-      context "when min_cost is present" do
-        it "returns a digest with length is 60" do
-          ActiveModel::SecurePassword.min_cost = 8
-          expect(subject.digest(subject.new_token).size).to eq 60
-        end
-      end
-
-      context "when min_cost is nil" do
-        it "returns a digest with length is 60" do
-          ActiveModel::SecurePassword.min_cost = nil
-          expect(subject.digest(subject.new_token).size).to eq 60
-        end
       end
     end
   end

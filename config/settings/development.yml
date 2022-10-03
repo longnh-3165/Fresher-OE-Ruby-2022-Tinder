@@ -9,8 +9,6 @@ gender:
   fem: "female"
 type_of:
   range: [0, 1]
-actived:
-  range: [0, 1]
 admin:
   range: [0, 1]
 sort_by:
