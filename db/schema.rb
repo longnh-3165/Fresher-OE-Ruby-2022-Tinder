@@ -10,59 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_923_022_714) do
-  create_table "countries", charset: "utf8mb4",
-collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema.define(version: 2022_10_03_012829) do
+
+  create_table "countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci",
-force: :cascade do |t|
+  create_table "messages", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.boolean "is_read", default: false
     t.bigint "user_send_id"
     t.bigint "user_receive_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index %w(user_receive_id), name: "index_messages_on_user_receive_id"
-    t.index %w(user_send_id), name: "index_messages_on_user_send_id"
+    t.index ["user_receive_id"], name: "index_messages_on_user_receive_id"
+    t.index ["user_send_id"], name: "index_messages_on_user_send_id"
   end
 
-  create_table "notifications", charset: "utf8mb4",
-collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.boolean "is_read"
     t.bigint "users_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index %w(users_id), name: "index_notifications_on_users_id"
+    t.index ["users_id"], name: "index_notifications_on_users_id"
   end
 
-  create_table "relationships", charset: "utf8mb4",
-collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.integer "status", default: 0
+    t.boolean "status", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index %w(followed_id), name: "index_relationships_on_followed_id"
-    t.index %w(follower_id followed_id),
-            name: "index_relationships_on_follower_id_and_followed_id", unique: true
-    t.index %w(follower_id), name: "index_relationships_on_follower_id"
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci",
-force: :cascade do |t|
+  create_table "requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci",
-force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.date "date_of_birth"
     t.integer "gender"
@@ -80,8 +74,8 @@ force: :cascade do |t|
     t.string "remember_digest"
     t.string "activation_digest"
     t.datetime "activated_at"
-    t.index %w(country_id), name: "index_users_on_country_id"
-    t.index %w(email), name: "index_users_on_email", unique: true
+    t.index ["country_id"], name: "index_users_on_country_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "messages", "users", column: "user_receive_id"
