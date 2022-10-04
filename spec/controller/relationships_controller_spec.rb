@@ -1,13 +1,12 @@
 require "rails_helper"
 
 RSpec.describe RelationshipsController, type: :controller do
-  include SessionsHelper
 
   describe "DELETE #destroy" do
     let!(:users){FactoryBot.create_list(:user, 2)}
 
     before do
-      log_in users[0]
+      sign_in users[0]
     end
 
     let!(:rel1) do
@@ -27,7 +26,7 @@ RSpec.describe RelationshipsController, type: :controller do
 
     it "redirect to current_user" do
       delete :destroy, params: {id: rel1.id}
-      expect(response).to redirect_to current_user
+      expect(response).to redirect_to users[0]
     end
   end
 end

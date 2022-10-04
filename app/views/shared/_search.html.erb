@@ -1,29 +1,29 @@
 <fieldset class="border p-2">
   <legend class="w-auto"><%= t(".filter") %></legend>
   <div class="row">
-    <%= form_tag admin_path, method: :get do |f| %>
-      <div class="col-2">
+    <%= search_form_for @search,url: admin_path do |f| %>
+      <div class="col-1">
         <h5><%= t(".search_by") %></h5>
       </div>
       <div class="col-2">
-        <%= text_field_tag :name, params[:name], class: "form-control", placeholder: t(".name") %>
-      </div>
-      <div class="col-1">
-        <%= check_box_tag :actived, {class: "form-control"} %>
-        <%= label_tag :actived, t(".actived") %>
-      </div>
-      <div class="col-1">
-        <%= check_box_tag :admin, {class: "form-control"} %>
-        <%= label_tag :admin, t(".admin") %>
-      </div>
-      <div class="col-1">
-        <%= label_tag :type_of, t(".upgrade_status") %>
+        <%= f.text_field :name_email_create_at_cont, {class: "form-control", placeholder: t(".name_or_email_or_day_create")} %>
       </div>
       <div class="col-2">
-        <%= select_tag :type_of, options_for_select(load_type_of), { include_blank: t(".select"), class: "form-control"} %>
+        <%= f.check_box :confirmed_at_not_null, html: {class: "form-control"}, include_hidden: false %>
+        <%= f.label :confirmed_at, t(".activated") %>
       </div>
       <div class="col-2">
-        <%= submit_tag t(".search"), class: "btn btn-primary" %>
+        <%= f.check_box :admin_true, html: {class: "form-control"}, include_hidden: false %>
+        <%= f.label :admin, t(".admin") %>
+      </div>
+      <div class="col-1">
+        <%= f.label :type_of, t(".upgrade_status") %>
+      </div>
+      <div class="col-1">
+        <%= f.select :type_of_in, options_for_select(load_type_of), { include_blank: t(".select")}, class: "form-control" %>
+      </div>
+      <div class="col-2">
+        <%= f.submit t(".search"), class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
