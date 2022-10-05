@@ -109,9 +109,9 @@ en:
   admin_pages:
     index:
       table_title: "List of users"
-      name: "Ten"
-      actived: "Activated?"
-      ad: "Admin?"
+      name: "Name"
+      activated: "Activated"
+      ad: "Admin"
       gold: "Upgrade status"
       liked: "Liked-by list"
       liking: "Liking list"
@@ -148,8 +148,8 @@ en:
     search:
       filter: "Filter"
       search_by: "Search by"
-      name: "Name"
-      actived: "Actived"
+      name_or_email_or_day_create: "Name or email or day create"
+      activated: "Activated"
       admin: "Admin"
       upgrade_status: "Upgrade status"
       select: "Select"

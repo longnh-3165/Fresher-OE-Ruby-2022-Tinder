@@ -105,7 +105,7 @@ vi:
     index:
       table_title: "Danh sách người dùng"
       name: "Tên"
-      actived: "Tình trạng kích hoạt"
+      activated: "Tình trạng kích hoạt"
       ad: "Admin"
       gold: "Tình trạng nâng cấp"
       act: "Hành động"
@@ -143,8 +143,8 @@ vi:
     search:
       filter: "Bộ lọc"
       search_by: "Tìm kiếm theo"
-      name: "Tên"
-      actived: "Đã kích hoạt"
+      name_or_email_or_day_create: "Tên hoặc email hoặc ngày tạo"
+      activated: "Đã kích hoạt"
       admin: "Quản lý"
       upgrade_status: "Loại tài khoản"
       select: "Lựa chọn"

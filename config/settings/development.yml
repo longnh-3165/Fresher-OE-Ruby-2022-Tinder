@@ -1,6 +1,6 @@
 digits:
   size_of_match_page: 1
-  size_of_admin_page: 10
+  size_of_admin_page: 7
 gender:
   range: [0, 1]
   choice_0: 0
