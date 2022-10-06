@@ -1,4 +1,10 @@
 en:
+  proposal_letter: "Proposal letter"
+  admin_mailer:
+    suggestion_email_month:
+      dear: "Dear"
+      context: "First of all, thank you for using our service, but your account is still Basic, we recommend upgrading your account to Gold to get more attractive functions."
+      thanks: "Thank you"
   date:
     formats:
       default: "%Y/%m/%d"

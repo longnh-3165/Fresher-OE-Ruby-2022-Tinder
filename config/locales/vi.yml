@@ -1,4 +1,10 @@
 vi:
+  proposal_letter: "Thư đề xuất"
+  admin_mailer:
+    suggestion_email_month:
+      dear: "Thân chào"
+      context: "Đầu tiên, cảm ơn đã tin tưởng sử dụng dịch vụ của chúng tôi, tuy nhiên tài khoản của bạn vẫn là Basic, chúng tôi đề xuất việc nâng cấp tài khoản của bạn lên thành Gold để có được các chức năng hấp dẫn hơn."
+      thanks: " Cảm ơn bạn."
   date:
     formats:
       default: "%d/%m/%Y"
