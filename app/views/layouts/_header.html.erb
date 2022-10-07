@@ -50,7 +50,7 @@
               <%= link_to t(".inf_ref"), current_user, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <% if current_user.admin %>
-                <%= link_to t(".ad_ref"), admin_path, class: "dropdown-item" %>
+                <%= link_to t(".ad_ref"), admin_root_path, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
               <% end %>
               <%= link_to t(".out"), destroy_user_session_path,method: :delete, class: "dropdown-item" %>

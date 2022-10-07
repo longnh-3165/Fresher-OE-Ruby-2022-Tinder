@@ -1,4 +1,16 @@
 vi:
+  users_excel:
+    export:
+      id: "Id"
+      name: "Tên"
+      date_of_birth: "Ngày sinh"
+      gender: "Giới tính"
+      facebook: "Facebook"
+      phone: "Điện thoại"
+      type: "Phân loại"
+      country: "Quê quán"
+      confirmed_at: "Ngày kích hoạt"
+      created_at: "Ngày tạo"
   proposal_letter: "Thư đề xuất"
   admin_mailer:
     suggestion_email_month:
@@ -121,6 +133,7 @@ vi:
       up: "Nâng cấp"
       down: "Hạ cấp"
       del: "Xóa"
+      download: "Tải xuống tập tin xlsx"
     upgrade:
       sc_mes: "Đã sửa!"
       f_mes: "Hiện không sửa được"

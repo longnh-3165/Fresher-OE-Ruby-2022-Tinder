@@ -65,6 +65,9 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
+    axlsx_rails (0.6.1)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
     bcrypt (3.1.13)
     bcrypt (3.1.13-java)
     bindex (0.8.1)
@@ -85,6 +88,11 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    caxlsx (3.2.0)
+      htmlentities (~> 4.3, >= 4.3.4)
+      marcel (~> 1.0)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (>= 1.3.0, < 3)
     childprocess (4.1.0)
     chronic (0.10.2)
     coderay (1.1.3)
@@ -155,6 +163,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     hammerjs-rails (2.0.8)
+    htmlentities (4.3.4)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     i18n-js (4.0.0)
@@ -169,6 +178,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (2.6.2)
     json (2.6.2-java)
+    libv8 (3.16.14.19)
+    libv8 (3.16.14.19-x86_64-linux)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -267,6 +278,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.8.0)
+    ref (2.0.0)
     regexp_parser (2.5.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -351,6 +363,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (1.2.1)
     tilt (2.0.11)
     toastr-rails (1.0.3)
@@ -400,6 +415,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  axlsx_rails
   bcrypt (= 3.1.13)
   bootsnap (>= 1.4.4)
   bootstrap (~> 4.6.1)
@@ -407,6 +423,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   config
   devise
+  execjs
   factory_bot_rails
   faker
   figaro
@@ -437,6 +454,7 @@ DEPENDENCIES
   simplecov
   simplecov-rcov
   spring
+  therubyracer
   toastr-rails
   turbolinks (~> 5)
   tzinfo-data
