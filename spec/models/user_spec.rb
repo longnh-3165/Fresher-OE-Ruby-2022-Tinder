@@ -106,54 +106,6 @@ RSpec.describe User, type: :model do
         expect(User.by_place nil).to eq([user_one, user_two])
       end
     end
-
-    context "find by name" do
-      it "input of name has value" do
-        expect(User.by_name_like user_one.name).to eq([user_one])
-      end
-    end
-
-    context "find by name with non-value" do
-      it "input of name hasn't value" do
-        expect(User.by_name_like nil).to eq([user_one, user_two])
-      end
-    end
-
-    context "find by type" do
-      it "input of type has value" do
-        expect(User.by_type_of 0).to eq([user_one])
-      end
-    end
-
-    context "find by type with non-value" do
-      it "input of type hasn't value" do
-        expect(User.by_type_of nil).to eq([user_one, user_two])
-      end
-    end
-
-    context "find by actived" do
-      it "input of actived has value" do
-        expect(User.by_confirmed).to eq([user_one, user_two])
-      end
-    end
-
-    context "find by actived with non-value" do
-      it "input of actived hasn't value" do
-        expect(User.all).to eq([user_one, user_two])
-      end
-    end
-
-    context "find by admin" do
-      it "input of admin has value" do
-        expect(User.by_admin true).to eq([user_one])
-      end
-    end
-
-    context "find by admin with non-value" do
-      it "input of admin hasn't value" do
-        expect(User.by_admin nil).to eq([user_one, user_two])
-      end
-    end
   end
 
   describe "Public instance methods" do
