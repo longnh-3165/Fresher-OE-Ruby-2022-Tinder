@@ -101,6 +101,9 @@ vi:
     update:
       success: "Đã cập nhật thông tin"
       danger: "Hiện chưa thể cập nhật"
+    destroy:
+      success: "Xoa nguoi dung thanh cong"
+      danger: "Xoa nguoi dung that bai"
     find_user_by_id:
       danger: "Không tìm thấy người dùng"
     form:
@@ -115,32 +118,44 @@ vi:
       btn: "Lưu thay đổi"
     unfollow:
       btn: "Bỏ thích"
+    mailer:
+      reset_password_instructions:
+        greet: "Xin chao "
+        warning: "Ai do da yeu cau thay doi mat khau cua ban. Ban co the thay doi mat khau bang cach click vao link duoi."
+        link: "Thay doi mat khau cua toi"
+        if_not: "Neu ban khong yeu cau, thi hay bo qua email nay"
+        explaination: "Mat khau se khong doi cho toi khi ban truy cap vao link tren va tao mot cai moi."
+      password_change:
+        greet: "Xin chao "
+        noti: "Chung toi gui mail nay de thong bao voi ban: Mat khau cua ban da bi thay doi."
   messages:
     message_form:
       message_label: "Tin nhắn"
       send: "Gửi"
-  admin_pages:
-    index:
-      table_title: "Danh sách người dùng"
-      name: "Tên"
-      activated: "Tình trạng kích hoạt"
-      ad: "Admin"
-      gold: "Tình trạng nâng cấp"
-      act: "Hành động"
-      liked: "Được thích bởi"
-      liking: "Đã thích"
-      info: "Thông tin"
-      up: "Nâng cấp"
-      down: "Hạ cấp"
-      del: "Xóa"
-      download: "Tải xuống tập tin xlsx"
-    upgrade:
-      sc_mes: "Đã sửa!"
-      f_mes: "Hiện không sửa được"
-    upgrade_confirm:
-      alert: "Bạn chắc chứ?"
-      x_btn: "Hủy"
-      v_btn: "Toi chot :v"
+  admin:
+    admin_pages:
+      index:
+        table_title: "Danh sách người dùng"
+        name: "Tên"
+        activated: "Tình trạng kích hoạt"
+        ad: "Admin"
+        gold: "Tình trạng nâng cấp"
+        act: "Hành động"
+        liked: "Được thích bởi"
+        liking: "Đã thích"
+        info: "Thông tin"
+        up: "Nâng cấp"
+        down: "Hạ cấp"
+        del: "Xóa"
+        download: "Tải xuống tập tin xlsx"
+        confirm: "Ban chac chan muon xoa?"
+      upgrade:
+        sc_mes: "Đã sửa!"
+        f_mes: "Hiện không sửa được"
+      upgrade_confirm:
+        alert: "Bạn chắc chứ?"
+        x_btn: "Hủy"
+        v_btn: "Toi chot :v"
   layouts:
     header:
       slogan: "Tìm kiếm một nửa của bạn tại đây"
@@ -182,4 +197,24 @@ vi:
       title: "KÍch hoạt tài khoản Tinder"
       msg: "Chào mừng tới Tinder! Để kích hoạt tài khoản của bạn, vui lòng nhấp chuột vào đường dẫn phía dưới:"
       link: "KÍch hoạt tài khoản"
+    reset_password_instructions:
+      subject: "Cap lai mat khau"
   content: "%{name} đã thích bạn"
+  devise:
+    passwords:
+      new:
+        title: "Quen mat khau"
+        subject: "Quen mat khau?"
+        email: "Nhap email cua ban"
+        btn: "Gui huong dan thay doi mat khau cho toi"
+        login: "Dang nhap"
+        signup: "Dang ky"
+      edit:
+        title: "Thay doi mat khau"
+        subject: "Thay doi mat khau cua ban"
+        new_pw: "Mat khau moi ("
+        min: " ky tu toi thieu)"
+        confirm_pw: "Nhap lai mat khau moi"
+        btn: "Thay mat khau cua toi"
+        login: "Dang nhap"
+        signup: "Dang ky"

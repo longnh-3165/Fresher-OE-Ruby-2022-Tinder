@@ -106,6 +106,9 @@ en:
     update:
       success: "Profile updated."
       danger: "Failed to update."
+    destroy:
+      success: "User deleted."
+      danger: "Failed to delete."
     find_user_by_id:
       danger: "User not found."
     form:
@@ -120,32 +123,44 @@ en:
       btn: "Save changes"
     unfollow:
       btn: "Unfollow"
+    mailer:
+      reset_password_instructions:
+        greet: "Hello "
+        warning: "Someone has requested a link to change your password. You can do this through the link below."
+        link: "Change my password"
+        if_not: "If you didn't request this, please ignore this email."
+        explaination: "Your password won't change until you access the link above and create a new one."
+      password_change:
+        greet: "Hello "
+        noti: "We're contacting you to notify you that your password has been changed."
   messages:
     message_form:
       message_label: "Message"
       send: "Send"
-  admin_pages:
-    index:
-      table_title: "List of users"
-      name: "Name"
-      activated: "Activated"
-      ad: "Admin"
-      gold: "Upgrade status"
-      liked: "Liked-by list"
-      liking: "Liking list"
-      act: "Actions"
-      info: "Info"
-      up: "Upgrade"
-      down: "Downgrade"
-      del: "Delete"
-      download: "Download as xlsx file"
-    upgrade:
-      sc_mes: "Edited!"
-      f_mes: "Failed to edit"
-    upgrade_confirm:
-      alert: "Are y sure?"
-      x_btn: "Cancel"
-      v_btn: "Sure"
+  admin:
+    admin_pages:
+      index:
+        table_title: "List of users"
+        name: "Name"
+        activated: "Activated"
+        ad: "Admin"
+        gold: "Upgrade status"
+        liked: "Liked-by list"
+        liking: "Liking list"
+        act: "Actions"
+        info: "Info"
+        up: "Upgrade"
+        down: "Downgrade"
+        del: "Delete"
+        download: "Download as xlsx file"
+        confirm: "You sure?"
+      upgrade:
+        sc_mes: "Edited!"
+        f_mes: "Failed to edit"
+      upgrade_confirm:
+        alert: "Are y sure?"
+        x_btn: "Cancel"
+        v_btn: "Sure"
   layouts:
     header:
       slogan: "Find your perfect half here"
@@ -187,4 +202,24 @@ en:
       title: "Tinder Acc Activation"
       msg: "Welcome to Tinder! To activate your acc, click the link below:"
       link: "Activate"
+    reset_password_instructions:
+      subject: "Reset Password"
   content: "%{name} liked you"
+  devise:
+    passwords:
+      new:
+        title: "Reset Password"
+        subject: "Forgot your password?"
+        email: "Enter your email"
+        btn: "Send me reset password instructions"
+        login: "Log in"
+        signup: "Sign up"
+      edit:
+        title: "Reset Password"
+        subject: "Change your password"
+        new_pw: "New password ("
+        min: " characters minimum)"
+        confirm_pw: "Confirm new password"
+        btn: "Change my password"
+        login: "Log in"
+        signup: "Sign up"

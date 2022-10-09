@@ -8,7 +8,7 @@ module AdminPagesHelper
   end
 
   def type_of_btn user
-    user.gold? ? "btn-outline-danger" : "btn-outline-warning"
+    user.gold? ? "link-danger" : "link-primary"
   end
 
   def act user

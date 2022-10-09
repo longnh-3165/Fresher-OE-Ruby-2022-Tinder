@@ -1,15 +1,18 @@
 <table class="table table-striped table-borderless">
-  <caption><%= t ".table_title" %></caption>
+  <caption>
+    <%= t ".table_title" %>
+    <%= link_to t(".download"), export_path(format: :xlsx), class: "link-primary" %>
+  </caption>
   <%= render "shared/search" %>
   <thead class="thead-dark">
     <tr>
       <th scope="col">
-        <%= sort_link(@search, :id, {}, class: "text-white") do %>
+        <%= sort_link(@search, :id, {}, class: "text-black") do %>
           #
         <% end %>
       </th>
       <th scope="col">
-        <%= sort_link(@search, :name, {}, class: "text-white") do %>
+        <%= sort_link(@search, :name, {}, class: "text-black") do %>
           <%= t ".name" %>
         <% end %>
       </th>
@@ -18,8 +21,6 @@
       <th scope="col"><%= t ".activated" %></th>
       <th scope="col"><%= t ".ad" %></th>
       <th scope="col"><%= t ".gold" %></th>
-      <th scope="col"><%= t ".liked" %></th>
-      <th scope="col"><%= t ".liking" %></th>
       <th scope="col"><%= t ".act" %></th>
     </tr>
   </thead>
@@ -27,7 +28,9 @@
     <% @users.each do |user| %>
       <tr>
         <th scope="row"><%= user.id %></th>
-        <td><%= user.name %></td>
+        <td>
+          <%= link_to user.name, user_path(id: user.id), class: "link-info"%>
+        </td>
         <td><%= user.email %></td>
         <td><%= I18n.l(user.created_at) %></td>
         <td>
@@ -37,44 +40,26 @@
           <i class="fa-solid <%= admin_icon(user) %>"></i>
         </td>
         <td>
-          <span class="badge badge-pill badge-<%="warning" if user.type_of == "gold" %>"><%= user.type_of %></span>
+          <span class="badge rounded-pill bg-<%= user.gold? ? "warning" : "secondary" %>"><%= user.type_of %></span>
           <!-- Button trigger modal -->
           <button type="button"
-                  class="btn <%= type_of_btn(user) %> <%= disabled_btn(user) %>"
-                  data-toggle="modal"
-                  data-target=<%= "#confirmModal" + user.id.to_s %>>
+                  class="<%= type_of_btn(user) %> <%= disabled_btn(user) %>"
+                  data-bs-toggle="modal"
+                  data-bs-target=<%= "#confirmModal" + user.id.to_s %>>
             <%= act(user) %>
           </button>
-        </td>
-        <td>
-          <button class="btn btn-info btn-block" data-toggle="modal" data-target= <%= "#followersModal" + user.id.to_s %>>
-            <i class="fa-solid fa-address-book"></i>
-          </button>
-        </td>
-        <td>
-          <button class="btn btn-info btn-block" data-toggle="modal" data-target= <%= "#followingModal" + user.id.to_s %>>
-            <i class="fa-regular fa-address-book"></i>
-          </button>
+          <%= render "upgrade_confirm", user: user %>
         </td>
         <td>
           <div class="btn-group btn-block" role="group" aria-label="User actions">
-            <button class="btn btn-info" data-toggle="modal" data-target= <%= "#userModal" + user.id.to_s %>>
-              <i class="fa-solid fa-info"></i>
-            </button>
-            <button class="btn btn-danger"><i class="fa-solid fa-user-slash"></i></button>
+            <%= render "shared/user_info_modal", user: user %>
+            <%= button_to "Delete", user, method: :delete, data: { confirm: t(".confirm") }, class: "link-danger bg-light" %>
           </div>
         </td>
       </tr>
-      <%= render "shared/followers_list", user: user %>
-      <%= render "shared/following_list", user: user %>
-      <%= render "shared/user_info_modal", user: user %>
-      <%= render "upgrade_confirm", user: user %>
     <% end %>
   </tbody>
 </table>
-<div class="float-right">
-  <%= link_to t(".download"), export_path(format: :xlsx), class: "btn btn-success btn-lg" %>
-</div>
 <div class="d-flex align-items-center flex-column">
   <%== pagy_bootstrap_nav(@pagy) %>
   <%== pagy_info(@pagy) %>
