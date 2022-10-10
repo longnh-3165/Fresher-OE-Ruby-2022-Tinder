@@ -1,4 +1,16 @@
 en:
+  users_excel:
+    export:
+      id: "Id"
+      name: "Name"
+      date_of_birth: "Date of Birth"
+      gender: "Gender"
+      facebook: "Facebook"
+      phone: "Phone"
+      type: "Type"
+      country: "Country"
+      confirmed_at: "Confirmation Date"
+      created_at: "Creation Date"
   proposal_letter: "Proposal letter"
   admin_mailer:
     suggestion_email_month:
@@ -126,6 +138,7 @@ en:
       up: "Upgrade"
       down: "Downgrade"
       del: "Delete"
+      download: "Download as xlsx file"
     upgrade:
       sc_mes: "Edited!"
       f_mes: "Failed to edit"

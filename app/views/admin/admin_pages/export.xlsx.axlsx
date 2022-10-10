@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Users") do |sheet|
+    sheet.add_row I18n.t(".users_excel.export").values
+  @users_excel.each do |user|
+    sheet.add_row [user.id, user.name, I18n.l(user.date_of_birth), user.gender, user.facebook, user.phone, user.type_of, user.country_name, I18n.l(user.confirmed_at), I18n.l(user.created_at)]
+  end
+end
