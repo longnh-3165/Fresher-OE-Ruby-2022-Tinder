@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <button class="btn btn-light dropdown-toggle"
+          type="button" data-toggle="dropdown"
+          aria-expanded="false">
+    <i class="fa-regular fa-bell"></i>
+    <span class="position-absolute top-0
+                 start-100 translate-middle badge rounded-pill bg-danger
+                 js-counter">
+      <%= render "notifications/counter" %>
+    </span>
+  </button>
+  <div class="dropdown-menu js-dropdown-menu-content">
+    <%= render @notifications %>
+  </div>
+</div>

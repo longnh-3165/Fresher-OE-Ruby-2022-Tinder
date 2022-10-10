@@ -3,11 +3,11 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.0.2"
 
-gem "axlsx_rails"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 4.6.1"
 gem "cancancan"
+gem "caxlsx_rails"
 gem "config"
 gem "devise"
 gem "execjs"

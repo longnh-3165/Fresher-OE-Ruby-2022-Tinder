@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   add_flash_types :success, :danger, :warning
-  before_action :set_locale
+  before_action :set_locale, :get_notifications
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -43,5 +43,11 @@ class ApplicationController < ActionController::Base
 
     flash[:danger] = t ".not_found"
     render "shared/_not_found"
+  end
+
+  def get_notifications
+    return unless current_user
+
+    @notifications = current_user.notifications.newest
   end
 end

@@ -16,31 +16,14 @@
         <% end %>
         <% unless params[:controller] == "admin_pages" %>
           <li class="nav-item active">
-            <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                <i class="fa-regular fa-message"></i>
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Mes_1</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Mes_2</a>
-              </div>
-            </div>
+            <%= link_to messages_path, class: "btn btn-default" do %>
+              <i class="fa-regular fa-message"></i>
+            <% end %>
           </li>
         <% end %>
-        <li class="nav-item active">
-          <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-              <i class="fa-regular fa-bell"></i>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Noti_1</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Noti_2</a>
-            </div>
-          </div>
+        <li class="nav-item active" id="js-noti-box">
+          <%= render "notifications/notification_center" %>
         </li>
-
         <li class="nav-item active">
           <div class="dropdown">
             <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">

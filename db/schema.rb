@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_03_012829) do
+ActiveRecord::Schema.define(version: 2022_10_08_093848) do
 
   create_table "countries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(version: 2022_10_03_012829) do
   create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.boolean "is_read"
-    t.bigint "users_id"
+    t.bigint "user_send_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_notifications_on_users_id"
+    t.integer "user_receive_id"
+    t.index ["user_send_id"], name: "index_notifications_on_user_send_id"
   end
 
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -83,6 +84,6 @@ ActiveRecord::Schema.define(version: 2022_10_03_012829) do
 
   add_foreign_key "messages", "users", column: "user_receive_id"
   add_foreign_key "messages", "users", column: "user_send_id"
-  add_foreign_key "notifications", "users", column: "users_id"
+  add_foreign_key "notifications", "users", column: "user_send_id"
   add_foreign_key "users", "countries"
 end
