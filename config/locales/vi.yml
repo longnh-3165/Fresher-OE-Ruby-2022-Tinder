@@ -182,3 +182,4 @@ vi:
       title: "KÍch hoạt tài khoản Tinder"
       msg: "Chào mừng tới Tinder! Để kích hoạt tài khoản của bạn, vui lòng nhấp chuột vào đường dẫn phía dưới:"
       link: "KÍch hoạt tài khoản"
+  content: "%{name} đã thích bạn"

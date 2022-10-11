@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe AdminPagesController, type: :controller do
+RSpec.describe Admin::AdminPagesController, type: :controller do
   let!(:admin){create(:user, admin: true)}
   let(:user1){create(:user, name: "hoang long")}
   let(:user2){create(:user, type_of: "gold")}

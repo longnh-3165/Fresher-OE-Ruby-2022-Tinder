@@ -187,3 +187,4 @@ en:
       title: "Tinder Acc Activation"
       msg: "Welcome to Tinder! To activate your acc, click the link below:"
       link: "Activate"
+  content: "%{name} liked you"

@@ -123,7 +123,6 @@ RSpec.describe User, type: :model do
   describe "Public instance methods" do
     let(:user){FactoryBot.create :user}
     let(:other_user){FactoryBot.create :user}
-
     describe "#like" do
       it "user like other user" do
         expect(user.like(other_user)).to eq([other_user])
@@ -141,10 +140,6 @@ RSpec.describe User, type: :model do
         before "check like each other" do
           other_user.following << user
           user.following << other_user
-        end
-
-        it "was liked" do
-          expect(user.like_each_other?(other_user, user)).to eq(2)
         end
       end
     end

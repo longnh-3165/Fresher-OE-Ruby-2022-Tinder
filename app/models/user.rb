@@ -15,6 +15,10 @@ class User < ApplicationRecord
                                   foreign_key: :followed_id, dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships
+  has_many :notifications, class_name: Notification.name,
+                           foreign_key: :user_receive_id, dependent: :destroy
+  has_many :send_notifications, class_name: Notification.name,
+                           foreign_key: :user_send_id, dependent: :destroy
 
   delegate :name, to: :country, prefix: true, allow_nil: true
 
@@ -62,9 +66,25 @@ class User < ApplicationRecord
     ids = [other_user.id, current_user.id]
     relationship = Relationship.by_follower(ids).by_followed(ids)
     relationship.update_all(status: true)
+    send_notification(current_user, other_user)
   end
 
   def unfollow other_user
     following.delete(other_user)
+  end
+
+  private
+
+  def send_notification current_user, other_user
+    noti = create_notification(current_user, other_user)
+    count = other_user.notifications.count
+    NotificationRelayJob.perform_later(noti, count)
+  end
+
+  def create_notification current_user, other_user
+    Notification.create(content: I18n.t(".content", name: other_user.name),
+                        user_send_id: current_user.id,
+                        user_receive_id: other_user.id,
+                        is_read: false)
   end
 end
