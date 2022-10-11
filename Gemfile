@@ -34,6 +34,7 @@ gem "toastr-rails"
 gem "whenever", require: false
 
 group :development do
+  gem "bullet"
   gem "listen", "~> 3.3"
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"

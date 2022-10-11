@@ -44,7 +44,7 @@ RSpec.describe Admin::AdminPagesController, type: :controller do
       let(:input){user1.id}
       it "should update role user" do
         expect(flash[:success]).to be_present
-        expect(response).to redirect_to admin_path
+        expect(response).to redirect_to admin_root_path
       end
     end
 
@@ -52,7 +52,7 @@ RSpec.describe Admin::AdminPagesController, type: :controller do
       let(:input){-1}
       it do
         expect(flash[:danger]).to be_present
-        expect(response).to redirect_to admin_path
+        expect(response).to redirect_to admin_root_path
       end
     end
   end
