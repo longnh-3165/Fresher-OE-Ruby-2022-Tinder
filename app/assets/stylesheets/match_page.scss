@@ -23,7 +23,12 @@
   padding: 10px 20px;
   position: relative;
 }
-.tlogo { width: 100px; margin: 0 auto; padding: 10px; }
+.tlogo {
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  padding-bottom: 10px;
+}
 .tlogo img { width: 100px; }
 .tphoto {
   width: 80%;

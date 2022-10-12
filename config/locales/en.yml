@@ -1,4 +1,8 @@
 en:
+  sc_mes: "Import successful"
+  f_mes: "Import failed"
+  column_invalid: "Column invalid"
+  unknown_file_type: "File %{file} invalid"
   users_excel:
     export:
       id: "Id"
@@ -154,6 +158,8 @@ en:
         del: "Delete"
         download: "Download as xlsx file"
         confirm: "You sure?"
+        import_from_excel: "Import from excel file"
+        import: "Import"
       upgrade:
         sc_mes: "Edited!"
         f_mes: "Failed to edit"
@@ -169,6 +175,8 @@ en:
       ad_ref: "Admin"
       out: "Log out"
       lang: "Languages"
+    footer:
+      footer_text: "Sun* Corporation"
   shared:
     followers_list:
       title: "'s followers"

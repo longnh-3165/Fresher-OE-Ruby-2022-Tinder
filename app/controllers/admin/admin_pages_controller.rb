@@ -3,7 +3,7 @@ class Admin::AdminPagesController < ApplicationController
   authorize_resource class: :AdminPagesController
 
   def index
-    @search = User.includes([:country, :following, :followers])
+    @search = User.includes([:country])
                   .ransack(params[:q])
     @pagy, @users = pagy @search.result
   end
@@ -12,16 +12,30 @@ class Admin::AdminPagesController < ApplicationController
     user = User.find_by id: params[:id]
     if user
       switch_role user
-      flash[:success] = t "sc_mes"
+      flash[:success] = t ".sc_mes"
       redirect_back(fallback_location: admin_root_path)
     else
-      flash[:danger] = t "f_mes"
+      flash[:danger] = t ".f_mes"
       redirect_to admin_root_path
     end
   end
 
   def switch_role user
     user.basic? ? user.gold! : user.basic!
+  end
+
+  def import
+    if params[:file]
+      begin
+        User.import(params[:file])
+        flash[:success] = t "sc_mes"
+      rescue StandardError => e
+        flash[:warning] = e.message
+      end
+    else
+      flash[:warning] = t "f_mes"
+    end
+    redirect_to admin_root_path
   end
 
   def export

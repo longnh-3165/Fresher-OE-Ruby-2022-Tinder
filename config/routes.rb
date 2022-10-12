@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users
-    root "devise/sessions#new"
+    root to: "devise/sessions#new"
     get "/match", to: "match_pages#index"
     get "/next", to: "match_pages#next"
     get "/export", to: "admin_pages#export"
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       root to: "admin_pages#index"
       resources :admin_pages do
         patch :upgrade, on: :member
+        collection { post :import }
       end
     end
     resources :messages, only: %i(show create index)
