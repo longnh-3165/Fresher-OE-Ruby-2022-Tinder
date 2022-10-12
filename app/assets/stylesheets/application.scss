@@ -12,15 +12,20 @@
  *
  *= require_tree .
  *= require_self
- *= require toastr
  */
 
 @import "font-awesome";
-@import "bootstrap";
 
 @font-face {
   font-family: 'MsMadi';
   src: url(font-path('MsMadi-Regular.ttf')) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url(font-path('Pacifico-Regular.ttf')) format('truetype');
   font-weight: bold;
   font-style: normal;
 }

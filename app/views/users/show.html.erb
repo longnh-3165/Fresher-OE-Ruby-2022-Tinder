@@ -40,8 +40,8 @@
               <%= @user.following.count %>
             </strong>
             <button class="btn btn-light"
-                    data-toggle="modal"
-                    data-target= <%= "#followingModal" + @user.id.to_s %>>
+                    data-bs-toggle="modal"
+                    data-bs-target= <%= "#followingModal" + @user.id.to_s %>>
               <%= t ".following" %>
             </button>
             <% if @user.gold? %>
@@ -49,8 +49,8 @@
                 <%= @user.followers.count %>
               </strong>
               <button id="followerList" class="btn btn-light"
-                      data-toggle="modal"
-                      data-target= <%= "#followersModal" + @user.id.to_s %>>
+                      data-bs-toggle="modal"
+                      data-bs-target= <%= "#followersModal" + @user.id.to_s %>>
                 <%= t ".followers" %>
               </button>
             <% end %>

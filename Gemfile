@@ -5,7 +5,6 @@ ruby "3.0.2"
 
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
-gem "bootstrap", "~> 4.6.1"
 gem "cancancan"
 gem "caxlsx_rails"
 gem "config"
@@ -14,11 +13,9 @@ gem "execjs"
 gem "faker"
 gem "figaro"
 gem "font-awesome-sass", "~> 6.2.0"
-gem "hammerjs-rails"
 gem "i18n"
 gem "i18n-js"
 gem "jbuilder", "~> 2.7"
-gem "jquery-rails"
 gem "mysql2", "~> 0.5"
 gem "pagy"
 gem "puma", "~> 5.0"
@@ -30,7 +27,6 @@ gem "sidekiq"
 gem "simplecov"
 gem "simplecov-rcov"
 gem "therubyracer", platforms: :ruby
-gem "toastr-rails"
 gem "whenever", require: false
 
 group :development do

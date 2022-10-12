@@ -1,0 +1,41 @@
+<% provide :title, t(".title") %>
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-pic">
+        <%= image_tag("icons8-tinder-316.png", alt: "Tinder logo") %>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <span class="login100-form-title">
+          <%= t ".subject" %>
+        </span>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="wrap-input100">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input100", placeholder: t(".email"), required: true %>
+          <span class="focus-input100"></span>
+          <span class="symbol-input100">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <%= f.submit t(".btn"), class: "login100-form-btn" %>
+        </div>
+
+        <div class="text-center p-t-12">
+          <a class="txt2" href="#">
+            <%= link_to t(".login"), new_session_path(resource_name) %> / <%= link_to t(".signup"), new_registration_path(resource_name) %>
+          </a>
+        </div>
+
+        <div class="text-center p-t-136">
+          <a class="txt2" href="#">
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
