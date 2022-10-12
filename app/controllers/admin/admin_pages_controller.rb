@@ -3,7 +3,8 @@ class Admin::AdminPagesController < ApplicationController
   authorize_resource class: :AdminPagesController
 
   def index
-    @search = User.ransack(params[:q])
+    @search = User.includes([:country, :following, :followers])
+                  .ransack(params[:q])
     @pagy, @users = pagy @search.result
   end
 
