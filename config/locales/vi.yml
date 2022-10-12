@@ -57,10 +57,6 @@ vi:
     upgrade:
       sc_mes: "Edited!"
       f_mes: "Failed to edit"
-    upgrade_confirm:
-      alert: "Ban chac chu?"
-      x_btn: "Huy"
-      v_btn: "Toi chot :v"
     index:
       user: "Người dùng"
       title: "Ghép đôi"
@@ -119,28 +115,29 @@ vi:
     message_form:
       message_label: "Tin nhắn"
       send: "Gửi"
-  admin_pages:
-    index:
-      table_title: "Danh sách người dùng"
-      name: "Tên"
-      activated: "Tình trạng kích hoạt"
-      ad: "Admin"
-      gold: "Tình trạng nâng cấp"
-      act: "Hành động"
-      liked: "Được thích bởi"
-      liking: "Đã thích"
-      info: "Thông tin"
-      up: "Nâng cấp"
-      down: "Hạ cấp"
-      del: "Xóa"
-      download: "Tải xuống tập tin xlsx"
-    upgrade:
-      sc_mes: "Đã sửa!"
-      f_mes: "Hiện không sửa được"
-    upgrade_confirm:
-      alert: "Bạn chắc chứ?"
-      x_btn: "Hủy"
-      v_btn: "Toi chot :v"
+  admin:
+    admin_pages:
+      index:
+        table_title: "Danh sách người dùng"
+        name: "Tên"
+        activated: "Tình trạng kích hoạt"
+        ad: "Admin"
+        gold: "Tình trạng nâng cấp"
+        act: "Hành động"
+        liked: "Được thích bởi"
+        liking: "Đã thích"
+        info: "Thông tin"
+        up: "Nâng cấp"
+        down: "Hạ cấp"
+        del: "Xóa"
+        download: "Tải xuống tập tin xlsx"
+      upgrade:
+        sc_mes: "Đã sửa!"
+        f_mes: "Hiện không sửa được"
+      upgrade_confirm:
+        alert: "Bạn chắc chứ?"
+        x_btn: "Hủy"
+        v_btn: "Toi chot :v"
   layouts:
     header:
       slogan: "Tìm kiếm một nửa của bạn tại đây"
@@ -149,6 +146,8 @@ vi:
       ad_ref: "Quản trị"
       out: "Đăng xuất"
       lang: "Ngôn ngữ"
+    footer:
+      footer_text: "Tập đoàn Sun*"
   shared:
     followers_list:
       title: " được thích bởi"

@@ -124,28 +124,29 @@ en:
     message_form:
       message_label: "Message"
       send: "Send"
-  admin_pages:
-    index:
-      table_title: "List of users"
-      name: "Name"
-      activated: "Activated"
-      ad: "Admin"
-      gold: "Upgrade status"
-      liked: "Liked-by list"
-      liking: "Liking list"
-      act: "Actions"
-      info: "Info"
-      up: "Upgrade"
-      down: "Downgrade"
-      del: "Delete"
-      download: "Download as xlsx file"
-    upgrade:
-      sc_mes: "Edited!"
-      f_mes: "Failed to edit"
-    upgrade_confirm:
-      alert: "Are y sure?"
-      x_btn: "Cancel"
-      v_btn: "Sure"
+  admin:
+    admin_pages:
+      index:
+        table_title: "List of users"
+        name: "Name"
+        activated: "Activated"
+        ad: "Admin"
+        gold: "Upgrade status"
+        liked: "Liked-by list"
+        liking: "Liking list"
+        act: "Actions"
+        info: "Info"
+        up: "Upgrade"
+        down: "Downgrade"
+        del: "Delete"
+        download: "Download as xlsx file"
+      upgrade:
+        sc_mes: "Edited!"
+        f_mes: "Failed to edit"
+      upgrade_confirm:
+        alert: "Are y sure?"
+        x_btn: "Cancel"
+        v_btn: "Sure"
   layouts:
     header:
       slogan: "Find your perfect half here"
@@ -154,6 +155,8 @@ en:
       ad_ref: "Admin"
       out: "Log out"
       lang: "Languages"
+    footer:
+      footer_text: "Sun* Corporation"
   shared:
     followers_list:
       title: "'s followers"
