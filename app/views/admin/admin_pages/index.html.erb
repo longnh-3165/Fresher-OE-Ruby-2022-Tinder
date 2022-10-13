@@ -1,7 +1,7 @@
 <table class="table table-striped table-borderless">
   <caption>
     <%= t ".table_title" %>
-    <%= link_to t(".download"), export_path(format: :xlsx), class: "btn btn-success" %>
+    <%= link_to t(".download"), admin_export_path(format: :xlsx), class: "btn btn-success" %>
   </caption>
   <%= render "shared/search" %>
   <thead class="thead-dark">

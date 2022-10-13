@@ -20,7 +20,7 @@ RSpec.describe MatchPagesController, type: :controller do
       before do
         get :index, params: {page: 1}
       end
-      it do
+      it "redirect to math_path with page is 2" do
         redirect_to match_path(page: 2)
       end
     end

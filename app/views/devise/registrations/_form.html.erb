@@ -33,10 +33,18 @@
         <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :date_of_birth) %></p>
       </div>
     </div>
-    <div class="form-row">
-      <%= f.label :country_id, t(".country"), class: "badge rounded-pill bg-info text-dark" %>
-      <%= f.select :country_id, cities %>
-      <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :country_id) %></p>
+    <div class="form-group">
+      <div class="form-row form-row-1">
+        <%= f.label :country_id, t(".country"), class: "badge rounded-pill bg-info text-dark" %>
+        <%= f.select :country_id, cities %>
+        <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :country_id) %></p>
+      </div>
+      <div class="form-row form-row-2">
+        <%= f.fields_for :addresses do |ff| %>
+        <%= ff.label :address, t(".address"), class: "badge rounded-pill bg-info text-dark" %>
+          <%= ff.text_field :address %>
+        <% end %>
+      </div>
     </div>
     <div class="form-row">
       <%= f.telephone_field :phone, class: "phone", placeholder: t(".phone") %>
