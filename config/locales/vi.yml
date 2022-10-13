@@ -107,9 +107,20 @@ vi:
     find_user_by_id:
       danger: "Không tìm thấy người dùng"
     form:
-      pw_confirm: "Nhập lại mật khẩu"
+      left_title: "Thong tin dang nhap"
+      change_img: "Thay anh"
       m: "Nam"
-      fem: "Nữ"
+      fem: "Nu"
+      name: "Ten"
+      email: "Email"
+      pw : "Mat khau (toi thieu 6 ky tu)"
+      pw_confirm: "Nhap lai mat khau"
+      right_title: "Thong tin ca nhan"
+      dob: "Ngay sinh"
+      country: "Thanh pho sinh song"
+      phone: "So dien thoai"
+      fb: "Facebook"
+      des: "Hay mo ta ve ban (500 tu toi da)"
     new:
       title: "Đăng ký"
       btn: "Tạo tài khoản mới"

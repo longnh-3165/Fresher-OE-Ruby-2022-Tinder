@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
-    devise_for :users
-    root to: "devise/sessions#new"
+    root to: "match_pages#index"
+    devise_for :users, skip: [:resgistrations]
     get "/match", to: "match_pages#index"
     get "/next", to: "match_pages#next"
     get "/export", to: "admin_pages#export"
