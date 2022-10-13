@@ -13,12 +13,12 @@ class MessagesController < ApplicationController
       partial_sender = "messages/mine"
       partial_receiver = "messages/their"
       ActionCable.server.broadcast "room_channel_#{@room_id}",
-                                   html_sender: html(message,
+                                   {html_sender: html(message,
                                                      partial_sender),
                                    html_receiver: html(message,
                                                        partial_receiver),
                                    sender: current_user.id,
-                                   receiver: message.user_receive_id
+                                   receiver: message.user_receive_id}
     else
       render :show
     end
@@ -42,12 +42,13 @@ class MessagesController < ApplicationController
   end
 
   def get_followed_users
-    @users = Relationship.accessible_by(current_ability).relationship_users
+    @users = Relationship.by_follower(current_user).relationship_users
                          .includes(followed: :messages)
   end
 
   def get_messages
-    @messages = Message.accessible_by(current_ability)
+    ids = [[current_user.id, params[:id]]]
+    @messages = Message.includes([:user]).by_user_receive(ids).by_user_send(ids)
     @message  = current_user.messages.build
   end
 

@@ -35,7 +35,6 @@ class User < ApplicationRecord
   validates :phone,
             format: {with: Settings.regex.phone}
   validates :description, length: {maximum: Settings.des.max}
-
   scope :by_gender,
         ->(gender){where(gender: gender.presence || Settings.gender.range)}
 
@@ -72,6 +71,37 @@ class User < ApplicationRecord
 
   def unfollow other_user
     following.delete(other_user)
+  end
+
+  class << self
+    def import file
+      spreadsheet = open_spreadsheet(file)
+      header = spreadsheet.row(1)
+      User.check_header_excel_file_and_column_of_user(header)
+      users = []
+      (2..spreadsheet.last_row).each do |i|
+        row = Hash[[header, spreadsheet.row(i)].transpose]
+        users << row
+      end
+      User.insert_all!(users)
+    end
+
+    def open_spreadsheet file
+      case File.extname(file.original_filename)
+      when ".xls" then Roo::Excel.new(file.path)
+      when ".xlsx" then Roo::Excelx.new(file.path)
+      else raise I18n.t(".unknown_file_type", file: file.original_filename)
+      end
+    end
+
+    def check_header_excel_file_and_column_of_user header
+      @correct_column_of_user = %w(name date_of_birth gender facebook phone
+                            description country_id email encrypted_password
+                            confirmed_at created_at updated_at)
+      return if header == @correct_column_of_user
+
+      raise I18n.t(".column_invalid")
+    end
   end
 
   private

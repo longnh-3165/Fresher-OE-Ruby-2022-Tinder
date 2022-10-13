@@ -1,54 +1,61 @@
 <% provide(:title, @user.name) %>
 <% if can? :read, @user %>
-  <div class="container emp-profile">
+  <div class="container emp-profile bg-light bg-gradient shadow-lg p-3 mb-5 bg-body rounded">
     <div class="row">
       <div class="col-md-4">
         <div class="profile-img">
-          <img src="https://placeimg.com/600/300/people">
+          <div class="user-heading round border-r-5 mb-2">
+            <%= gravatar_for @user %>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="profile-head">
-          <h5>
+          <h1>
             <%= @user.name %>
-          </h5>
-          <h6>
             <span class="badge badge-pill badge-warning"><%= @user.type_of %></span>
-          </h6>
+          </h1>
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><%= t (".about") %></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><%= t (".description") %></a>
-            </li>
           </ul>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label><%= t (".description") %></label>
+          </div>
+          <div class="col-md-6">
+            <h5><%= @user.description %></h5>
+          </div>
         </div>
       </div>
       <div class="col-md-2">
         <%= link_to t(".edit_button"), edit_user_path(current_user), class: "profile-edit-btn" %>
       </div>
     </div>
+    <hr>
     <div class="row">
       <div class="col-md-4">
         <div class="profile-work">
-          <h5><%= t (".time_line") %></h5>
+          <h3><u><%= t (".time_line") %></u></h3>
           <p><%= t (".day_join") %> <%= I18n.l(@user.created_at) %></p><br/>
           <h5><%= t (".follow") %></h5>
           <div class="stats">
             <strong id="contact" class="stat">
               <%= @user.following.count %>
             </strong>
-            <button class="btn btn-light"
+            <button class="btn btn-outline-primary"
                     data-bs-toggle="modal"
                     data-bs-target= <%= "#followingModal" + @user.id.to_s %>>
               <%= t ".following" %>
             </button>
+            <span>||</span>
             <% if @user.gold? %>
               <strong id="followers" class="stat">
                 <%= @user.followers.count %>
               </strong>
-              <button id="followerList" class="btn btn-light"
+              <button id="followerList" class="btn btn-outline-primary"
                       data-bs-toggle="modal"
                       data-bs-target= <%= "#followersModal" + @user.id.to_s %>>
                 <%= t ".followers" %>
@@ -114,13 +121,6 @@
               </div>
               <div class="col-md-6">
                 <p><%= @user.country_name %></p>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="row">
-              <div class="col-md-6">
-                  <p><%= @user.description %></p>
               </div>
             </div>
           </div>

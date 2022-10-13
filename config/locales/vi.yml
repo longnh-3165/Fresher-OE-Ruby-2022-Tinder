@@ -1,4 +1,8 @@
 vi:
+  sc_mes: "Nhập thành công"
+  f_mes: "Nhập thất bại"
+  column_invalid: "Cột từ file excel không hợp lệ"
+  unknown_file_type: "File %{file} không hợp lệ"
   users_excel:
     export:
       id: "Id"
@@ -57,10 +61,6 @@ vi:
     upgrade:
       sc_mes: "Edited!"
       f_mes: "Failed to edit"
-    upgrade_confirm:
-      alert: "Ban chac chu?"
-      x_btn: "Huy"
-      v_btn: "Toi chot :v"
     index:
       user: "Người dùng"
       title: "Ghép đôi"
@@ -149,6 +149,8 @@ vi:
         del: "Xóa"
         download: "Tải xuống tập tin xlsx"
         confirm: "Ban chac chan muon xoa?"
+        import_from_excel: "Nhập dữ liệu từ excel"
+        import: "Nhập"
       upgrade:
         sc_mes: "Đã sửa!"
         f_mes: "Hiện không sửa được"
@@ -164,6 +166,8 @@ vi:
       ad_ref: "Quản trị"
       out: "Đăng xuất"
       lang: "Ngôn ngữ"
+    footer:
+      footer_text: "Tập đoàn Sun*"
   shared:
     followers_list:
       title: " được thích bởi"
