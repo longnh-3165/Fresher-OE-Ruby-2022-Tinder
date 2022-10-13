@@ -1,6 +1,14 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-detail"}) do |f| %>
+<%= form_for(@user, html: {class: "form-detail"}) do |f| %>
   <div class="form-left">
     <h2><%= t ".left_title" %></h2>
+    <div class="form-row">
+      <div class="gravatar_edit d-flex justify-content-center">
+        <div class="col-6">
+          <%= gravatar_for @user %>
+          <%= link_to t(".change_img"), "https://gravatar.com/emails", target: "_blank", rel: "noopener", class: "badge rounded-pill bg-primary" %>
+        </div>
+      </div>
+    </div>
     <div class="form-row">
       <%= f.text_field :name, placeholder: t(".name"), class: "input-text" %>
       <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :name) %></p>
@@ -39,7 +47,7 @@
       <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :country_id) %></p>
     </div>
     <div class="form-row">
-      <%= f.telephone_field :phone, class: "phone", placeholder: t(".phone") %>
+      <%= f.telephone_field t(".phone"), class: "phone", placeholder: "Phone" %>
       <p class="badge rounded-pill bg-danger"><%= show_errors(f.object, :phone) %></p>
     </div>
     <div class="form-row">

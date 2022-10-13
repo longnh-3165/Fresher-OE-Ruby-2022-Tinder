@@ -14,11 +14,11 @@ class MessagesController < ApplicationController
       partial_receiver = "messages/their"
       ActionCable.server.broadcast "room_channel_#{@room_id}",
                                    {html_sender: html(message,
-                                                     partial_sender),
-                                   html_receiver: html(message,
-                                                       partial_receiver),
-                                   sender: current_user.id,
-                                   receiver: message.user_receive_id}
+                                                      partial_sender),
+                                    html_receiver: html(message,
+                                                        partial_receiver),
+                                    sender: current_user.id,
+                                    receiver: message.user_receive_id}
     else
       render :show
     end

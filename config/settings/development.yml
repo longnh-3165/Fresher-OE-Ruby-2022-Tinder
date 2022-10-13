@@ -30,3 +30,5 @@ pw:
   min: 6
 des:
   max: 500
+image:
+  size: 80

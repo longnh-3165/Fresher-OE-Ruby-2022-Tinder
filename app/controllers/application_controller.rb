@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   add_flash_types :success, :danger, :warning
   before_action :set_locale, :get_notifications
+  before_action :config_devise_params, if: :devise_controller?
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
@@ -49,5 +50,9 @@ class ApplicationController < ActionController::Base
     return unless current_user
 
     @notifications = current_user.notifications.newest
+  end
+
+  def config_devise_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: User::ALLOWED_USER_PARAMS)
   end
 end

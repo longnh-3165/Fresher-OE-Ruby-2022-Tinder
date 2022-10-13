@@ -1,16 +1,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to image_tag("icons8-tinder-64.png", size: "30", alt: t("base_title")), match_path, class: "navbar-brand" %>
-  <%= link_to t(".slogan"), match_path, class: "btn btn-light btn-lg", style: "font-family:MsMadi" %>
+  <%= link_to image_tag("icons8-tinder-48.png", size: "30", alt: t("base_title")) + " Tinder", match_path, class: "navbar-brand", style: "font-family:Pacifico"  %>
+  <%= link_to t(".slogan"), match_path, class: "nav-link active link-danger", style: "font-family:Pacifico; font-size:1.24rem" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
     <ul class="navbar-nav">
       <% if current_user %>
-        <% if params[:action] == "match" %>
+        <% if params[:action] == "index" %>
           <li class="nav-item active">
-            <button class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+            <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
               <i class="fa-solid fa-filter"> <%= t ".fil_btn" %></i>
             </button>
           </li>
@@ -33,26 +33,22 @@
           <ul class="dropdown-menu" aria-labelledby="prfMenu">
             <li><%= link_to t(".inf_ref"), current_user, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
-            <% if current_user.admin %>
-              <li><%= link_to t(".ad_ref"), admin_root_path, class: "dropdown-item" %></li>
-              <li><hr class="dropdown-divider"></li>
-            <% end %>
-            <li><%= link_to t(".out"), destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+            <li><%= link_to t(".out"), destroy_user_session_path, class: "dropdown-item" %></li>
           </ul>
         </li>
       <% end %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="langs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <%= t ".lang" %>
+          <%= image_tag("language.png", size: "30") %>
         </a>
-        <ul class="dropdown-menu" aria-labelledby="langs">
-          <li><a class="dropdown-item">
-            <%= link_to t("application.en"), locale: :en %>
-          </a></li>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langs">
+          <li>
+            <%= button_to " EN", {locale: :en}, {class: "dropdown-item link-primary bg-light"} %>
+          </li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item">
-            <%= link_to t("application.vi"), locale: :vi %>
-          </a></li>
+          <li>
+            <%= button_to " VI", {locale: :vi}, {class: "dropdown-item link-primary bg-light"} %>
+          </li>
         </ul>
       </li>
     </ul>

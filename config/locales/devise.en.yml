@@ -36,6 +36,23 @@ en:
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      new:
+        title: "Sign up"
+        btn: "Register"
+      form:
+        left_title: "Login Info"
+        m: "Male"
+        fem: "Female"
+        name: "Name"
+        email: "Email"
+        pw : "Password (6 characters minimum)"
+        pw_confirm: "Password Confirmation"
+        right_title: "Contact Details"
+        dob: "Date of birth"
+        country: "City"
+        phone: "Phone"
+        fb: "Facebook"
+        des: "Describe you here (500 words max)"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."

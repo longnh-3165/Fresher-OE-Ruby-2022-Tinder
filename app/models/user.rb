@@ -2,8 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable,
-         :lockable
+         :recoverable, :rememberable, :confirmable,
+         :lockable, :validatable
   include MatchPagesHelper
 
   belongs_to :country, optional: true
@@ -30,10 +30,13 @@ class User < ApplicationRecord
 
   before_save{email.downcase!}
   validates :name, presence: true
+
   validates :gender, presence: true
+
   validates :date_of_birth, presence: true
-  validates :phone,
-            format: {with: Settings.regex.phone}
+
+  validates :phone, format: {with: Settings.regex.phone}
+
   validates :description, length: {maximum: Settings.des.max}
   scope :by_gender,
         ->(gender){where(gender: gender.presence || Settings.gender.range)}

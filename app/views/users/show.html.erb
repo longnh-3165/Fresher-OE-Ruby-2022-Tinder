@@ -3,10 +3,8 @@
   <div class="container emp-profile bg-light bg-gradient shadow-lg p-3 mb-5 bg-body rounded">
     <div class="row">
       <div class="col-md-4">
-        <div class="profile-img">
-          <div class="user-heading round border-r-5 mb-2">
-            <%= gravatar_for @user %>
-          </div>
+        <div class="d-flex justify-content-center">
+          <%= gravatar_for @user %>
         </div>
       </div>
       <div class="col-md-6">
@@ -41,27 +39,28 @@
           <h3><u><%= t (".time_line") %></u></h3>
           <p><%= t (".day_join") %> <%= I18n.l(@user.created_at) %></p><br/>
           <h5><%= t (".follow") %></h5>
-          <div class="stats">
-            <strong id="contact" class="stat">
-              <%= @user.following.count %>
-            </strong>
-            <button class="btn btn-outline-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target= <%= "#followingModal" + @user.id.to_s %>>
-              <%= t ".following" %>
-            </button>
-            <span>||</span>
-            <% if @user.gold? %>
-              <strong id="followers" class="stat">
-                <%= @user.followers.count %>
+          <% if current_user.active_relationships.find_by(followed_id: @user.id) %>
+            <div class="stats">
+              <strong id="contact" class="stat">
+                <%= @user.following.count %>
               </strong>
-              <button id="followerList" class="btn btn-outline-primary"
+              <button class="btn btn-light"
                       data-bs-toggle="modal"
-                      data-bs-target= <%= "#followersModal" + @user.id.to_s %>>
-                <%= t ".followers" %>
+                      data-bs-target= <%= "#followingModal" + @user.id.to_s %>>
+                <%= t ".following" %>
               </button>
-            <% end %>
-          </div>
+              <% if @user.gold? %>
+                <strong id="followers" class="stat">
+                  <%= @user.followers.count %>
+                </strong>
+                <button id="followerList" class="btn btn-light"
+                        data-bs-toggle="modal"
+                        data-bs-target= <%= "#followersModal" + @user.id.to_s %>>
+                  <%= t ".followers" %>
+                </button>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="col-md-8">
