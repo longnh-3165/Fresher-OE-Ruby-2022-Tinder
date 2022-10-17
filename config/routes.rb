@@ -18,4 +18,13 @@ Rails.application.routes.draw do
     resources :messages, only: %i(show create index)
     mount ActionCable.server, at: "/cable"
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :users
+      resources :admin_pages do
+        patch :upgrade, on: :member
+      end
+    end
+  end
 end

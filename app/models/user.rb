@@ -112,6 +112,10 @@ class User < ApplicationRecord
     end
   end
 
+  def switch_role
+    basic? ? gold! : basic!
+  end
+
   private
 
   def send_notification current_user, other_user

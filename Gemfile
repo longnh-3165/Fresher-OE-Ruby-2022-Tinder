@@ -3,6 +3,7 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.0.2"
 
+gem "active_model_serializers"
 gem "bcrypt", "3.1.13"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "cancancan"
@@ -19,6 +20,7 @@ gem "jbuilder", "~> 2.7"
 gem "mysql2", "~> 0.5"
 gem "pagy"
 gem "puma", "~> 5.0"
+gem "rack-cors"
 gem "rails", "~> 6.1.6", ">= 6.1.6.1"
 gem "ransack"
 gem "redis", "~> 4.8"
@@ -27,6 +29,7 @@ gem "sass-rails", ">= 6"
 gem "sidekiq"
 gem "simplecov"
 gem "simplecov-rcov"
+gem "swagger-docs"
 gem "therubyracer", platforms: :ruby
 gem "whenever", require: false
 
