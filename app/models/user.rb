@@ -7,6 +7,7 @@ class User < ApplicationRecord
   include MatchPagesHelper
 
   belongs_to :country, optional: true
+
   enum type_of: {basic: 0, gold: 1}
   enum gender: {male: 0, female: 1}
   has_many :messages, dependent: :destroy, foreign_key: :user_send_id
@@ -21,12 +22,16 @@ class User < ApplicationRecord
   has_many :send_notifications, class_name: Notification.name,
                            foreign_key: :user_send_id, dependent: :destroy
 
+  has_many :addresses, dependent: :destroy
+
+  accepts_nested_attributes_for :addresses
+
   delegate :name, to: :country, prefix: true, allow_nil: true
 
-  ALLOWED_USER_PARAMS = %i(name email password
-                           password_confirmation date_of_birth
-                           gender country_id phone facebook
-                           description).freeze
+  ALLOWED_USER_PARAMS = [:name, :email, :password, :password_confirmation,
+                         :date_of_birth, :gender, :country_id, :phone,
+                         :facebook, :description,
+                         {addresses_attributes: [:address]}].freeze
 
   before_save{email.downcase!}
   validates :name, presence: true

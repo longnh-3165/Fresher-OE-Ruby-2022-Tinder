@@ -33,6 +33,10 @@
           <ul class="dropdown-menu" aria-labelledby="prfMenu">
             <li><%= link_to t(".inf_ref"), current_user, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
+            <% if current_user.admin %>
+              <li><%= link_to t(".ad_ref"), admin_root_path, class: "dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+            <% end %>
             <li><%= link_to t(".out"), destroy_user_session_path, class: "dropdown-item" %></li>
           </ul>
         </li>
