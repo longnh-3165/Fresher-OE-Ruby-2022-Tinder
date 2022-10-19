@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
+  include ActionController::HttpAuthentication::Token::ControllerMethods
   add_flash_types :success, :danger, :warning
   before_action :set_locale, :get_notifications
   before_action :config_devise_params, if: :devise_controller?

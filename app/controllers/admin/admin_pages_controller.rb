@@ -11,17 +11,13 @@ class Admin::AdminPagesController < ApplicationController
   def upgrade
     user = User.find_by id: params[:id]
     if user
-      switch_role user
+      user.switch_role
       flash[:success] = t ".sc_mes"
       redirect_back(fallback_location: admin_root_path)
     else
       flash[:danger] = t ".f_mes"
       redirect_to admin_root_path
     end
-  end
-
-  def switch_role user
-    user.basic? ? user.gold! : user.basic!
   end
 
   def import

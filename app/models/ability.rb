@@ -20,6 +20,6 @@ class Ability
     return unless user.admin
 
     can :manage, :AdminPagesController
-    can %i(read destroy), User
+    can %i(read destroy upgrade), User
   end
 end
